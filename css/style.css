@@ -406,6 +406,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 
 /* ===== Begin progress bar ===== */
 .skill-bar {
+        display: block;
 }
 .progress {
 	overflow: visible;
@@ -704,19 +705,21 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 /* ===== End team ===== */
 
 
-/* ===== Begin partners ===== */
-#partners-section {
-	padding: 80px 0;
+/* ===== Begin certifications ===== */
+#certifications-section {
+        padding: 80px 0;
 }
-.partners {
-	background-color: #252320;
+.cert-entry {
+        text-align: center;
+        padding: 15px;
 }
-
-.partners img {
-	max-width: 100%;
-	padding: 0 15px;
+.cert-logo {
+        max-width: 100%;
+        height: 75px;
+        margin-bottom: 15px;
+        object-fit: contain;
 }
-/* ===== End partners ===== */
+/* ===== End certifications ===== */
 
 
 /* ===== Begin panels ===== */
@@ -1121,10 +1124,21 @@ p.subtitle {
 	transform: rotate(45deg);
 }
 .scrolltotop .fa {
-	padding-left: 4px;
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-o-transform: rotate(-45deg);
-	transform: rotate(-45deg);
+        padding-left: 4px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
 }
 /* ===== End buttons ===== */
+
+/* Education and experience logos */
+.education-entry, .experience-entry {
+    margin-bottom: 30px;
+}
+.edu-logo, .exp-logo {
+    max-width: 100%;
+    height: 75px;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
