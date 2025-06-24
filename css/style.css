@@ -406,6 +406,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 
 /* ===== Begin progress bar ===== */
 .skill-bar {
+        display: block;
 }
 .progress {
 	overflow: visible;
