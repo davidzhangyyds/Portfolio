@@ -249,10 +249,10 @@
 		margin-bottom: 50px;
 	}
 
-	/* Partners & Foter */
-	#partners-section, footer {
-		text-align: center;
-	}
+        /* Certifications & Footer */
+        #certifications-section, footer {
+                text-align: center;
+        }
 
 	/* Hiding elements */
 	.testimonial:before,

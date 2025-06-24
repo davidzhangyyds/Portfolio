@@ -91,8 +91,8 @@ $("#owl-intro-text").owlCarousel({
 })
 
 
-// Partner carousel
-$("#owl-partners").owlCarousel({
+// Certifications carousel
+$("#owl-certifications").owlCarousel({
     items : 4,
     itemsDesktop : [1199,3],
     itemsDesktopSmall : [980,2],
