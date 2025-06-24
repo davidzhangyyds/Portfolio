@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes compétences en cybersécurité</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d1117; /* sombre bleu/noir */
+            color: #e0e0e0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            text-align: center;
+            background-color: #1f2937; /* gris foncé */
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        header p {
+            margin: 0;
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+        section {
+            width: 90%;
+            max-width: 1000px;
+            margin-bottom: 30px;
+            background-color: #161b22; /* gris foncé */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.6);
+        }
+        h2 {
+            color: #60a5fa; /* bleu clair */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: #1e293b;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+        }
+        .cta {
+            background-color: #1f2937;
+            color: #fff;
+            text-align: center;
+        }
+        .cta a {
+            color: #1e90ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mes compétences en cybersécurité</h1>
+        <p>Passionné par la sécurité informatique, je développe mes compétences à travers des projets concrets, des certifications et une veille active.</p>
+    </header>
+
+    <section>
+        <h2>Compétences techniques</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Sécurité réseau</h3>
+                <p>VLAN, pare-feu, VPN, 802.1X, Cisco ASA, Stormshield</p>
+            </div>
+            <div class="card">
+                <h3>Sécurité des systèmes</h3>
+                <p>Hardening Windows/Linux, Active Directory, Intune, GPO</p>
+            </div>
+            <div class="card">
+                <h3>Analyse de vulnérabilités</h3>
+                <p>Nessus, OpenVAS, audit EBIOS RM</p>
+            </div>
+            <div class="card">
+                <h3>Détection &amp; SIEM</h3>
+                <p>Splunk, Security Onion, Wazuh, Zeek</p>
+            </div>
+            <div class="card">
+                <h3>Pentest &amp; CTF</h3>
+                <p>Kali Linux, Metasploit, nmap, reverse shell</p>
+            </div>
+            <div class="card">
+                <h3>Cloud &amp; IAM</h3>
+                <p>Sécurité sur Azure, AWS IAM, MFA, Zero Trust</p>
+            </div>
+            <div class="card">
+                <h3>Gouvernance et conformité</h3>
+                <p>NIST, ISO 27001/27005, RGPD, politique de sécurité</p>
+            </div>
+            <div class="card">
+                <h3>Certifications</h3>
+                <p>CCNA, CSNA, préparation&nbsp;: CCNP ENCOR, AWS</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Exemples concrets</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>SIEM avec Splunk dans un home lab</h3>
+                <p>Mise en place d'un environnement de collecte et d'analyse de logs.</p>
+            </div>
+            <div class="card">
+                <h3>Déploiement d’un AD sécurisé</h3>
+                <p>Configuration des GPO et MFA pour renforcer la sécurité.</p>
+            </div>
+            <div class="card">
+                <h3>Participation à des CTF</h3>
+                <p>Entraînement régulier sur TryHackMe et HackTheBox.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Outils et langages</h2>
+        <div class="grid">
+            <div class="card">
+                <p>Wireshark, nmap, Burp Suite, GNS3, Cisco Packet Tracer, Zabbix</p>
+            </div>
+            <div class="card">
+                <p>Bash, PowerShell, Python</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Veille &amp; méthodologies</h2>
+        <p>Je suis l’actualité cybersécurité via ZATAZ, CERT-FR, ThreatPost et m’appuie sur les frameworks MITRE ATT&amp;CK, OWASP Top 10.</p>
+    </section>
+
+    <section class="cta">
+        <p>Envie d’en savoir plus ou de collaborer&nbsp;? Consultez mon <a href="https://github.com/" target="_blank">GitHub</a> ou <a href="mailto:contact@example.com">contactez-moi</a>.</p>
+    </section>
+</body>
+</html>
