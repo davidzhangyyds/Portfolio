@@ -91,8 +91,8 @@ $("#owl-intro-text").owlCarousel({
 })
 
 
-// Certifications carousel
-$("#owl-certifications").owlCarousel({
+// Certifications carousels
+$("#owl-certifications-stormshield, #owl-certifications-cisco, #owl-certifications-anssi").owlCarousel({
     items : 4,
     itemsDesktop : [1199,3],
     itemsDesktopSmall : [980,2],
