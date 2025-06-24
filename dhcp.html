@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Presentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            margin-bottom: 60px;
+            border-radius: 5px;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 48%;
+        }
+        .introduction {
+            display: flex;
+            margin-right: 20px;
+        }
+        .introduction-text {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .introduction-image {
+            flex: 1;
+            text-align: center;
+        }
+        .introduction-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .pdf-container {
+            width: 170%;
+            height: 500px; /* Adjust the height as needed */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Project Presentation</h1>
+    </header>
+    <div class="content">
+        <section class="introduction">
+            <div class="introduction-text">
+                <h2>Introduction</h2>
+                <p>The company has several networks where machines receive IP addresses via DHCP.
+                    However, in order to restrict access to the network, only machines whose MAC address is
+                    registered by the network and system department can obtain an address via DHCP, and this
+                    address is fixed.
+                    In order to centralise the management of the DHCP servers on each network, the company
+                    wants to install a central server that can access these different DHCP servers. From
+                    services hosted on the network machines also needs to be managed centrally.
+                    centralised.
+                    The general objective is therefore to have a central machine that supervises the DHCP
+                    servers on each network and administers the services running on the various machines
+                    on the local networks. It is therefore a DHCP supervision and service supervision tool.
+                    services.</p>
+            </div>
+            <div class="introduction-image">
+                <img src="img/dhcp.jpg" alt="Project Illustration">
+            </div>
+        </section>
+        <section>
+            <h2>Notions used</h2>
+            <h3>Python</h3>
+            <p>Developement of DHCP management commands</p>
+            <h3>Knowledge of computer networks</h3>
+            <p>DHCP</p>
+            <p>VLAN</p>
+        </section>
+    </div>
+    <section style="width: 70%;">
+        <h2>Project details</h2>
+        <p>Presentation of the project</p>
+        <div class="pdf-container">
+            <embed src="projets_pdf/SAE203 presentation.pdf" type="application/pdf" width="50%" height="500px"/>
+        </div>
+        <p>User manual</p>
+        <br>
+        <div class="pdf-container">
+            <embed src="projets_pdf/Document user SAE203.pdf" type="application/pdf" width="50%" height="500px"/>
+        </div>
+    </section>
+</body>
+</html>
