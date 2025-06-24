@@ -14,10 +14,11 @@ html {
 	height: 100% !important;
 }
 body {
-	position: relative;
-	height: 100%;
-	font-size: 14px;
-	color: #363940;
+        position: relative;
+        height: 100%;
+        font-size: 14px;
+        color: #e0e0e0;
+        background-color: #0d1117;
 }
 body .body {
 	height: 100%;
@@ -33,7 +34,7 @@ body .body {
 }
 .page {
   overflow: hidden;
-  background-color: #fff;
+  background-color: #161b22;
   padding: 50px 0;
 }
 * {
@@ -127,7 +128,7 @@ section {
 
 
 /* ===== Begin text colors ===== */
-.text-main { color: #363940; } /* Theme main color */
+.text-main { color: #60a5fa; } /* Theme main color */
 .text-white { color: #FFF; }
 .text-off-white { color: #e7e7e7;}
 .text-dark { color: #000; }
@@ -295,8 +296,8 @@ section {
 	transition: all 0.2s ease-in-out;
 }
 a.rotate-box-1, a.rotate-box-2 {
-	text-decoration: none;
-	color: #363940;
+        text-decoration: none;
+        color: #e0e0e0;
 }
 a.rotate-box-1:hover, a.rotate-box-2:hover {
 	color: #676D75;
@@ -406,6 +407,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 
 /* ===== Begin progress bar ===== */
 .skill-bar {
+        display: block;
 }
 .progress {
 	overflow: visible;
@@ -509,8 +511,8 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
     display: inline-block;
 }
 .portfolio_menu ul li a{
-	color: #363940;
-	background: transparent;
+        color: #e0e0e0;
+        background: transparent;
     display: inline-block;
     margin: 4px;
     padding: 8px 10px;
@@ -704,19 +706,21 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 /* ===== End team ===== */
 
 
-/* ===== Begin partners ===== */
-#partners-section {
-	padding: 80px 0;
+/* ===== Begin certifications ===== */
+#certifications-section {
+        padding: 80px 0;
 }
-.partners {
-	background-color: #252320;
+.cert-entry {
+        text-align: center;
+        padding: 15px;
 }
-
-.partners img {
-	max-width: 100%;
-	padding: 0 15px;
+.cert-logo {
+        max-width: 100%;
+        height: 75px;
+        margin-bottom: 15px;
+        object-fit: contain;
 }
-/* ===== End partners ===== */
+/* ===== End certifications ===== */
 
 
 /* ===== Begin panels ===== */
@@ -1121,10 +1125,26 @@ p.subtitle {
 	transform: rotate(45deg);
 }
 .scrolltotop .fa {
-	padding-left: 4px;
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-o-transform: rotate(-45deg);
-	transform: rotate(-45deg);
+        padding-left: 4px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
 }
 /* ===== End buttons ===== */
+
+/* Education and experience logos */
+.education-entry, .experience-entry {
+    margin-bottom: 30px;
+}
+.edu-logo, .exp-logo {
+    max-width: 100%;
+    height: 75px;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+.exp-link, .cert-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
