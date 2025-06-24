@@ -45,6 +45,24 @@
         .cta a {
             color: #1e90ff;
         }
+        .glpi-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .glpi-text {
+            flex: 1 1 300px;
+        }
+        .glpi-image {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+        .glpi-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.6);
+        }
     </style>
 </head>
 <body>
@@ -61,6 +79,17 @@
     <section>
         <h2>Projets réalisés</h2>
         <p>Maintenance de l'infrastructure existante et assistance utilisateurs sur site.</p>
+    </section>
+    <section>
+        <h2>Projet GLPI</h2>
+        <div class="glpi-container">
+            <div class="glpi-text">
+                <p>Déploiement et configuration de la solution GLPI pour le suivi des incidents et la gestion de parc informatique.</p>
+            </div>
+            <div class="glpi-image">
+                <img src="img/glpi_project.png" alt="Illustration du projet GLPI">
+            </div>
+        </div>
     </section>
     <section class="cta">
         <p><a href="index.html">Retour au portfolio</a></p>
