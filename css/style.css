@@ -41,6 +41,12 @@ body .body {
   padding: 50px 0;
 }
 
+#services-section,
+#experiences,
+#certifications-section {
+  background-color: #1b222c;
+}
+
 * {
 	border-radius: 0 !important;
 	-webkit-border-radius: 0 !important;
@@ -725,16 +731,8 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 }
 .cert-entry {
         text-align: center;
-        padding: 15px;
-        border: 1px solid #676D75;
-        border-radius: 4px;
-        transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
-.cert-entry:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 15px rgba(0,0,0,0.4);
-        border-color: #fff;
-}
+
 .cert-logo {
         max-width: 100%;
         height: 75px;
@@ -1157,11 +1155,17 @@ p.subtitle {
 /* ===== End buttons ===== */
 
 /* Education and experience logos */
-.education-entry, .experience-entry {
+.education-entry, .experience-entry, .cert-entry {
     margin-bottom: 30px;
     border: 1px solid #676D75;
     border-radius: 4px;
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    background-color: #1c2128;
+    padding: 15px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .edu-logo, .exp-logo {
     max-width: 100%;
@@ -1174,7 +1178,7 @@ p.subtitle {
     color: inherit;
     text-decoration: none;
 }
-.education-entry:hover, .experience-entry:hover {
+.education-entry:hover, .experience-entry:hover, .cert-entry:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.4);
     border-color: #fff;
