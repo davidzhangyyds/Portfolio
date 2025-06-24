@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lycée du Rempart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d1117;
+            color: #e0e0e0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            text-align: center;
+            background-color: #1f2937;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        section {
+            width: 90%;
+            max-width: 1000px;
+            margin-bottom: 30px;
+            background-color: #161b22;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.6);
+        }
+        h2 {
+            color: #60a5fa;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: #1e293b;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+        }
+        .cta {
+            background-color: #1f2937;
+            color: #fff;
+            text-align: center;
+        }
+        .cta a {
+            color: #1e90ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lycée du Rempart</h1>
+        <p>Marseille, 2019 - 2021 &ndash; Baccalauréat STI2D option SIN</p>
+    </header>
+    <section>
+        <h2>Présentation</h2>
+        <p>Au lycée du Rempart, j'ai approfondi mes connaissances techniques en électronique et informatique tout en développant une forte culture scientifique.</p>
+    </section>
+    <section>
+        <h2>Moments clés</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Projet de terminale</h3>
+                <p>Réalisation d'un système embarqué dédié à la domotique.</p>
+            </div>
+            <div class="card">
+                <h3>Approche pédagogique</h3>
+                <p>Mise en pratique des cours via des travaux dirigés orientés réseaux et sécurité.</p>
+            </div>
+        </div>
+    </section>
+    <section class="cta">
+        <p><a href="index.html">Retour au portfolio</a></p>
+    </section>
+</body>
+</html>

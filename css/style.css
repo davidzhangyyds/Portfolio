@@ -1158,7 +1158,7 @@ p.subtitle {
     margin-bottom: 15px;
     object-fit: contain;
 }
-.exp-link, .cert-link {
+.exp-link, .cert-link, .edu-link {
     display: block;
     color: inherit;
     text-decoration: none;
