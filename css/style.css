@@ -1142,3 +1142,10 @@ p.subtitle {
     margin-bottom: 15px;
     object-fit: contain;
 }
+
+.exp-link, .cert-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
