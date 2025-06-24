@@ -726,6 +726,14 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 .cert-entry {
         text-align: center;
         padding: 15px;
+        border: 1px solid #676D75;
+        border-radius: 4px;
+        transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.cert-entry:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+        border-color: #fff;
 }
 .cert-logo {
         max-width: 100%;
@@ -1151,6 +1159,9 @@ p.subtitle {
 /* Education and experience logos */
 .education-entry, .experience-entry {
     margin-bottom: 30px;
+    border: 1px solid #676D75;
+    border-radius: 4px;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 .edu-logo, .exp-logo {
     max-width: 100%;
@@ -1166,6 +1177,6 @@ p.subtitle {
 .education-entry:hover, .experience-entry:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.4);
-    transition: transform 0.3s, box-shadow 0.3s;
+    border-color: #fff;
 }
 
