@@ -406,9 +406,11 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 
 
 /* ===== Begin progress bar ===== */
+
 .skill-bar {
         display: block;
 }
+
 .progress {
 	overflow: visible;
 	height: 25px;
@@ -706,6 +708,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 /* ===== End team ===== */
 
 
+
 /* ===== Begin certifications ===== */
 #certifications-section {
         padding: 80px 0;
@@ -721,6 +724,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
         object-fit: contain;
 }
 /* ===== End certifications ===== */
+
 
 
 /* ===== Begin panels ===== */
@@ -1124,6 +1128,7 @@ p.subtitle {
 	-o-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
+
 .scrolltotop .fa {
         padding-left: 4px;
         -webkit-transform: rotate(-45deg);
@@ -1148,3 +1153,4 @@ p.subtitle {
     color: inherit;
     text-decoration: none;
 }
+
