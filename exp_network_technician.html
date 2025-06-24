@@ -45,6 +45,24 @@
         .cta a {
             color: #1e90ff;
         }
+        .ad-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .ad-text {
+            flex: 1 1 300px;
+        }
+        .ad-image {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+        .ad-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.6);
+        }
     </style>
 </head>
 <body>
@@ -59,6 +77,17 @@
     <section>
         <h2>Projets réalisés</h2>
         <p>Mise en place d'un service Active Directory et déploiement de solutions de sauvegarde.</p>
+    </section>
+    <section>
+        <h2>Projet Active Directory</h2>
+        <div class="ad-container">
+            <div class="ad-text">
+                <p>Déploiement d'un domaine Active Directory afin de centraliser la gestion des utilisateurs et des ressources informatiques. Mise en place de politiques de groupe pour automatiser la configuration des postes et sécuriser le réseau.</p>
+            </div>
+            <div class="ad-image">
+                <img src="img/active_directory.svg" alt="Illustration Active Directory">
+            </div>
+        </div>
     </section>
     <section class="cta">
         <p><a href="index.html">Retour au portfolio</a></p>
