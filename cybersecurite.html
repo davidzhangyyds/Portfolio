@@ -8,7 +8,9 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+
+            background-color: #0d1117; /* sombre bleu/noir */
+            color: #e0e0e0;
             padding: 20px;
 
             display: flex;
@@ -17,7 +19,8 @@
         }
         header {
             text-align: center;
-            background-color: #333;
+
+            background-color: #1f2937; /* gris foncé */
             color: #fff;
 
             padding: 20px;
@@ -34,13 +37,15 @@
             width: 90%;
             max-width: 1000px;
             margin-bottom: 30px;
-            background-color: #fff;
+
+            background-color: #161b22; /* gris foncé */
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.6);
         }
         h2 {
-            color: #333;
+            color: #60a5fa; /* bleu clair */
+
             margin-bottom: 20px;
             text-align: center;
         }
@@ -50,13 +55,20 @@
             gap: 20px;
         }
         .card {
-            background-color: #fafafa;
+
+            background-color: #1e293b;
             border-radius: 5px;
             padding: 15px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.05);
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.5);
         }
         .cta {
-            background-color: #333;
+            background-color: #1f2937;
+
             color: #fff;
             text-align: center;
         }

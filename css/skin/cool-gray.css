@@ -138,9 +138,11 @@ a, a:hover, a:focus {
 
 
 /* === CTA Section, Social & Partners === */
+
 #cta-section, #certifications-section, #social-section {
-	background: #f8f8f8 url('../../img/pat-bg.png') repeat;
+        background: #1f2937;
 }
+
 
 
 /* === Portfolio === */
