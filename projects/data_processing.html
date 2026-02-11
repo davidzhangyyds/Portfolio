@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Presentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            margin-bottom: 60px;
+            border-radius: 5px;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 48%;
+        }
+        .introduction {
+            display: flex;
+            margin-right: 20px;
+        }
+        .introduction-text {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .introduction-image {
+            flex: 1;
+            text-align: center;
+        }
+        .introduction-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .pdf-container {
+            width: 170%;
+            height: 500px; /* Adjust the height as needed */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Project Presentation</h1>
+    </header>
+    <div class="content">
+        <section class="introduction">
+            <div class="introduction-text">
+                <h2>Introduction</h2>
+                <p>In this SAE we were able to acquire various computer skills such as textual data analysis, collection and 
+                    pre-processing of textual data, which enables us to process textual data from information systems. </p>
+            </div>
+            <div class="introduction-image">
+                <img src="img/twitter.jpg" alt="Project Illustration">
+            </div>
+        </section>
+        <section>
+            <h2>Notions used</h2>
+            <h3>Python</h3>
+            <p>Various data manipulation functions</p>
+            <h3>Scripting</h3>
+            <p>Processing configuration files</p>
+        </section>
+    </div>
+    <section style="width: 70%;">
+        <h2>Project details</h2>
+        <p>Here is the report of the project</p>
+        <div class="pdf-container">
+            <embed src="projets_pdf/Raport traiter des données.pdf" type="application/pdf" width="50%" height="500px"/>
+        </div>
+        
+    </section>
+</body>
+</html>
