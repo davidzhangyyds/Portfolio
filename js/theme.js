@@ -68,8 +68,8 @@ $('body').scrollspy({
 // Display loading image while page loads
 ///////////////////////////////////////////
 
-// Wait for window load
-$(window).load(function() {
+// Wait for document ready
+$(document).ready(function() {
     // Animate loader off screen
     $(".page-loader").fadeOut("slow");
 });

@@ -1,66 +1,60 @@
 ﻿<!doctype html>
 <!--
-	Template:	 Unika - Responsive One Page HTML5 Template
-	Author:		 imransdesign.com
-	URL:		 http://imransdesign.com/
+    Template:	 Unika - Responsive One Page HTML5 Template
+    Author:		 imransdesign.com
+    URL:		 http://imransdesign.com/
     Designed By: https://www.behance.net/poljakova
-	Version:	1.0	
+    Version:	1.0	
 -->
-<html lang="fr">
-	<head>
+<html lang="en-US">
+    <head>
 
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>David Zhang</title>
-		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
-		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
-		<meta name="author" content="imransdesign.com">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>David Zhang</title>
+        <meta name="description" content="Unika - Responsive One Page HTML5 Template">
+        <meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
+        <meta name="author" content="imransdesign.com">
 
-		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Google Fonts  -->
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'> <!-- Body font -->
-		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> <!-- Navbar font -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'> <!-- Body font -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> <!-- Navbar font -->
 
-		<!-- Libs and Plugins CSS -->
-		<link rel="stylesheet" href="inc/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="inc/animations/css/animate.min.css">
-		<link rel="stylesheet" href="inc/font-awesome/css/font-awesome.min.css"> <!-- Font Icons -->
-		<link rel="stylesheet" href="inc/owl-carousel/css/owl.carousel.css">
-		<link rel="stylesheet" href="inc/owl-carousel/css/owl.theme.css">
+        <!-- Libs and Plugins CSS -->
+        <link rel="stylesheet" href="inc/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="inc/animations/css/animate.min.css">
+        <link rel="stylesheet" href="inc/font-awesome/css/font-awesome.min.css"> <!-- Font Icons -->
+        <link rel="stylesheet" href="inc/owl-carousel/css/owl.carousel.css">
+        <link rel="stylesheet" href="inc/owl-carousel/css/owl.theme.css">
 
-		<!-- Theme CSS -->
+        <!-- Theme CSS -->
         <link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/mobile.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/mobile.css">
 
-		<!-- Skin CSS -->
-		<link rel="stylesheet" href="css/skin/cool-gray.css">
-        <!-- <link rel="stylesheet" href="css/skin/ice-blue.css"> -->
-        <!-- <link rel="stylesheet" href="css/skin/summer-orange.css"> -->
-        <!-- <link rel="stylesheet" href="css/skin/fresh-lime.css"> -->
-        <!-- <link rel="stylesheet" href="css/skin/night-purple.css"> -->
+        <!-- Skin CSS -->
+        <link rel="stylesheet" href="css/skin/cybersecurity-dark.css">
 
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-
-	</head>
+    </head>
 
     <body data-spy="scroll" data-target="#main-navbar">
         <div class="page-loader"></div>  <!-- Display loading image while page loads -->
-    	<div class="body">
+        <div class="body">
         
             <!--========== BEGIN HEADER ==========-->
             <header id="header" class="header-main">
 
                 <!-- Begin Navbar -->
-                <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation"> <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
+                <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
 
                   <div class="container">
 
@@ -78,12 +72,19 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a class="page-scroll" href="body">Accueil</a></li>
-                            <li><a class="page-scroll" href="index.html">EN</a></li>
+                            <li><a class="page-scroll" href="#">Accueil</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FR <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="index.html">Anglais</a></li>
+                                    <li class="active"><a href="index_fr.html">Français</a></li>
+                                </ul>
+                            </li>
                             <li><a class="page-scroll" href="#about-section">À propos</a></li>
                             <li><a class="page-scroll" href="#skills">Compétences</a></li>
-                            <li><a class="page-scroll" href="#services-section">Formation</a></li>
+                            <li><a class="page-scroll" href="#formations">Formation</a></li>
                             <li><a class="page-scroll" href="#experiences">Expériences</a></li>
+                            <li><a class="page-scroll" href="#certifications">Certifications</a></li>
                             <li><a class="page-scroll" href="#portfolio-section">Portfolio</a></li>
                             <li><a class="page-scroll" href="#contact-section">Contact</a></li>
                         </ul>
@@ -95,708 +96,836 @@
             </header>
             <!-- ========= END HEADER =========-->
             
-            
-            
-            
-        	<!-- Begin text carousel intro section -->
-			<section id="text-carousel-intro-section" class="parallax" data-stellar-background-ratio="0.5" style="background-image: url(img/slider-bg.jpg);">
-				
-				<div class="container">
-					<div class="caption text-center text-white" data-stellar-ratio="0.7">
+            <!-- Begin text carousel intro section -->
+            <section id="text-carousel-intro-section" class="parallax" data-stellar-background-ratio="0.5" style="background-image: url(img/slider-bg.jpg);">
+                
+                <div class="container">
+                    <div class="caption text-center text-white" data-stellar-ratio="0.7">
 
-						<div id="owl-intro-text" class="owl-carousel">
-							<div class="item">
-								<h1>Nous avons des choses incroyables</h1>
-								<p>Rendons le web magnifique ensemble</p>
+                        <div id="owl-intro-text" class="owl-carousel">
+                            <div class="item">
+                                <h1>Nous avons des choses formidables</h1>
+                                <p>Rendons le web beau ensemble</p>
                                 <div class="extra-space-l"></div>
-								<a class="btn btn-blank" href="#about-section" target="_blank" role="button">Voir plus !</a>
-							</div>
-							<div class="item">
-								<h1>Rejoignez-moi</h1>
-								<p>Vers le plus grand voyage</p>
-								<div class="extra-space-l"></div>
-								<a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">Voir plus !</a>
-							</div>
-							<div class="item">
-								<h1>Je suis David</h1>
-								<p>Bienvenue dans mon portfolio</p>
-								<div class="extra-space-l"></div>
-								<a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">Voir plus !</a>
-							</div>
-						</div>
+                                <a class="btn btn-blank" href="#about-section" target="_blank" role="button">Voir plus !</a>
+                            </div>
+                            <div class="item">
+                                <h1>Rejoignez-moi</h1>
+                                <p>Pour le plus grand voyage</p>
+                                <div class="extra-space-l"></div>
+                                <a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">Voir plus !</a>
+                            </div>
+                            <div class="item">
+                                <h1>Je suis David</h1>
+                                <p>Bienvenue sur mon portfolio</p>
+                                <div class="extra-space-l"></div>
+                                <a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">Voir plus !</a>
+                            </div>
+                        </div>
 
-					</div> <!-- /.caption -->
-				</div> <!-- /.container -->
+                    </div> <!-- /.caption -->
+                </div> <!-- /.container -->
 
-			</section>
-			<!-- End text carousel intro section -->
-                
-                
-                
-                
+            </section>
+            <!-- End text carousel intro section -->
+            
             <!-- Begin about section -->
-			<section id="about-section" class="page bg-style1">
+            <section id="about-section" class="page bg-style1" style="background-color:#f9f9f9;">
                 <!-- Begin page header-->
                 <div class="page-header-wrapper">
                     <div class="container">
                         <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
                             <h2>À propos</h2>
                             <div class="devider"></div>
+                            <p class="subtitle">Étudiant en école d’ingénieurs en Réseaux et Sécurité, je suis passionné par la conception, la sécurisation et l’administration des infrastructures informatiques. Mon intérêt pour la cybersécurité m’a conduit à développer des compétences solides en réseaux, systèmes et protection des environnements d’entreprise.</p>
                         </div>
                     </div>
-                            <p class="subtitle">Je suis actuellement étudiant à l'IUT Réseaux et Télécoms de Luminy à Marseille. Passionné par les nouvelles technologies, j'ai choisi cette formation pour me spécialiser dans les réseaux informatiques, les systèmes et la cybersécurité. Mon objectif est de devenir ingénieur dans ces domaines. Depuis le collège, je pratique régulièrement le basket-ball, car c'est ma passion et cela me permet aussi de garder une bonne condition physique.</p><br>
                 </div>
                 <!-- End page header-->
 
-                <!-- Begin rotate box-1 -->
-                <div class="rotate-box-1-wrapper">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
-                                    <span class="rotate-box-icon"><i class="fa fa-users"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4>Qui suis-je ?</h4>
-                                        <p>Né en France, motivé pour devenir ingénieur</p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
-                                    <span class="rotate-box-icon"><i class="fa fa-diamond"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4>Que fais-je ?</h4>
-                                        <p>Passionné par les nouvelles technologies, j'explore constamment ce domaine. </p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.4s">
-                                    <span class="rotate-box-icon"><i class="fa fa-heart"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4>Pourquoi je le fais ?</h4>
-                                        <p>Pour survivre dans cette société en faisant ce que j'aime</p>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.6s">
-                                    <span class="rotate-box-icon"><i class="fa fa-clock-o"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4>Depuis quand ?</h4>
-                                        <p>Depuis l'enfance, au premier contact </p>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                        </div> <!-- /.row -->
-                    </div> <!-- /.container -->
+                <div class="container">
+                    <div class="about-content" style="font-size:1.1em; line-height:1.6; color:#333;">
+                        <p>Au cours de ma formation et de mes projets, j’ai travaillé sur des technologies clés telles que Active Directory, les architectures réseau sécurisées, les mécanismes d’authentification et les outils de supervision. J’ai notamment participé à la mise en place et à la sécurisation d’un service d’annuaire Active Directory, un élément central de la gestion des identités et des accès dans les infrastructures modernes.</p>
+                        <p>Certifié Cisco CCNA et Stormshield CSNA, je possède une bonne compréhension des concepts de réseaux, de segmentation, de filtrage et de défense en profondeur. Je m’intéresse également aux domaines émergents comme la sécurité du cloud, l’automatisation et la détection d’intrusions.</p>
+                        <p>À travers ce portfolio, je partage mes projets, expérimentations techniques et travaux académiques, qui illustrent ma démarche d’apprentissage continu et mon intérêt pour la cybersécurité appliquée aux environnements professionnels.</p>
+                    </div>
                 </div>
-                <!-- End rotate box-1 -->
             </section>
 
-
-                <div class="extra-space-l"></div>
+            <div class="extra-space-l"></div>
+            
+            <!-- Begin Skills section -->
             <section id="skills" class="page bg-style1">
                 <!-- Begin page header--> 
                 <div class="page-header-wrapper">
                     <div class="container">
                         <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
-                            <h2 id="skills">Mes compétences</h2>
+                            <h2>My Skills</h2>
                             <div class="devider"></div>
                         </div>
                     </div>
                 </div>
                 <!-- End page header-->
             
-            
-                <!-- Begin Our Compétences -->
+                <!-- Begin Our Skills -->
                 <div class="our-skills">
-                	<div class="container">
-                    	<div class="row">
-                        
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="pages/cybersecurite.html" class="skill-bar wow slideInLeft" data-wow-delay="0.2s">
+                                    <div class="progress-lebel">
+                                        <h6>Cybersécurité</h6>
+                                    </div>
+                                    <div class="progress">
+                                      <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+                                      </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="pages/reseaux.html" class="skill-bar wow slideInRight" data-wow-delay="0.2s">
+                                    <div class="progress-lebel">
+                                        <h6>Réseaux</h6>
+                                    </div>
+                                    <div class="progress">
+                                      <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+                                      </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="pages/telecommunications.html" class="skill-bar wow slideInLeft" data-wow-delay="0.4s">
+                                    <div class="progress-lebel">
+                                        <h6>Telecommunications</h6>
+                                    </div>
+                                    <div class="progress">
+                                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                      </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="pages/systemes.html" class="skill-bar wow slideInRight" data-wow-delay="0.4s">
+                                    <div class="progress-lebel">
+                                        <h6>Systèmes</h6>
+                                    </div>
+                                    <div class="progress">
+                                      <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+                                      </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="pages/base_donnees.html" class="skill-bar wow slideInLeft" data-wow-delay="0.4s">
+                                    <div class="progress-lebel">
+                                        <h6>Bases de données</h6>
+                                    </div>
+                                    <div class="progress">
+                                      <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;">
+                                      </div>
+                                    </div>
+                                </a>
+                            </div>
 
-            <div class="col-sm-6">
-                <a href="pages/cybersecurite.html" class="skill-bar wow slideInLeft" data-wow-delay="0.2s">
-                    <div class="progress-lebel">
-                        <h6>Cybersécurité</h6>
-
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-                      </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-6">
-                <a href="pages/reseaux.html" class="skill-bar wow slideInRight" data-wow-delay="0.2s">
-                    <div class="progress-lebel">
-                        <h6>Réseaux</h6>
-
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-                      </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-6">
-                <a href="pages/telecommunications.html" class="skill-bar wow slideInLeft" data-wow-delay="0.4s">
-                    <div class="progress-lebel">
-                        <h6>Télécommunications</h6>
-
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                      </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-6">
-                <a href="pages/systemes.html" class="skill-bar wow slideInRight" data-wow-delay="0.4s">
-                    <div class="progress-lebel">
-
-                        <h6>Systèmes</h6>
-
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-                      </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-6">
-                <a href="pages/base_donnees.html" class="skill-bar wow slideInLeft" data-wow-delay="0.4s">
-                    <div class="progress-lebel">
-
-                        <h6>Bases de données</h6>
-
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;">
-                      </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-sm-6">
-                <a href="pages/software_development.html" class="skill-bar wow slideInRight" data-wow-delay="0.6s">
-                    <div class="progress-lebel">
-                        <h6>Développement logiciel</h6>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                      </div>
-                    </div>
-                </a>
-            </div>
-
-                            
+                            <div class="col-sm-6">
+                                <a href="pages/software_development.html" class="skill-bar wow slideInRight" data-wow-delay="0.6s">
+                                    <div class="progress-lebel">
+                                        <h6>Développement logiciel</h6>
+                                    </div>
+                                    <div class="progress">
+                                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                      </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div> <!-- /.row -->
                     </div> <!-- /.container -->
                 </div>
                 <!-- End Our Skill -->
-          </section>
-          <!-- End about section -->
+            </section>
+            <!-- End Skills section -->
 
-              
-              
-              
-          <!-- Begin cta -->
-          <section id="cta-section">
-          	<div class="cta">
-            	<div class="container">
-                	<div class="row">
-                    
-                    	<div class="col-md-9">
-                        	<a href="pages/data_processing.html">Télécharger mon CV</a>
-                            <p>Inspiré par la nature, suivant la technologie, appréciant les classiques. Pour voir mon profil en détail, les possibilités sont infinies.</p>
-                        </div>
-                        
-                        <div class="col-md-3">
-                        	<div class="cta-btn wow bounceInRight" data-wow-delay="0.4s">
-                        <a class="btn btn-default btn-lg" href="Documents/CV.pdf" target="_blank" role="button">Télécharger mon CV</a>
-                        	</div>
-                        </div>
-                        
-                    </div> <!-- /.row -->
-                </div> <!-- /.container -->
-            </div>
-          </section>
-          <!-- End cta -->
+            <!-- Begin CTA section -->
+            <section id="cta-section">
+                <div class="cta">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <a href="pages/data_processing.html">Download My CV</a>
+                                <p>Inspired by nature, follow technology, appreciate the classics. To see my profile in detail. The possibilities are just endless.</p>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="cta-btn wow bounceInRight" data-wow-delay="0.4s">
+                                    <a class="btn btn-default btn-lg" href="Documents/CV.pdf" target="_blank" role="button">Download my CV</a>
+                                </div>
+                            </div>
+                        </div> <!-- /.row -->
+                    </div> <!-- /.container -->
+                </div>
+            </section>
+            <!-- End CTA section -->
 
-              
-              
-              
-            <!-- Begin Services -->
-            <section id="services-section" class="page text-center">
+            <!-- Begin Formations section -->
+            <section id="formations" class="page text-center formations-section">
                 <!-- Begin page header-->
                 <div class="page-header-wrapper">
                     <div class="container">
                         <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2>Formation</h2>
+                            <h2>Formations</h2>
                             <div class="devider"></div>
-                            <p class="subtitle">Mon parcours académique</p>
+                            <p class="subtitle">My academic career</p>
                         </div>
                     </div>
                 </div>
                 <!-- End page header-->
-            
-                <!-- Begin education logos -->
-                <div class="education-wrapper">
+
+                <!-- Begin formations cards -->
+                <div class="formations-wrapper">
                     <div class="container">
+                        <div class="formations-progress">
+                            <div class="progress-bar-container">
+                                <div class="progress-line"></div>
+                            </div>
+                        </div>
+
                         <div class="row">
-                            <div class="col-md-3 col-sm-6">
-                                <a href="pages/longchamp.html" class="edu-link education-entry text-center wow zoomIn" data-wow-delay="0">
-                                    <img src="img/portfolio/p1.jpg" alt="Longchamp Public Middle School logo" class="edu-logo img-responsive center-block">
-                                    <h4>Longchamp Public Middle School</h4>
-                                    <p>2014 - 2018</p>
-                                </a>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6">
-                                <a href="pages/rempart.html" class="edu-link education-entry text-center wow zoomIn" data-wow-delay="0.2s">
-                                    <img src="img/portfolio/p2.jpg" alt="High School of Rempart logo" class="edu-logo img-responsive center-block">
-                                    <h4>High School of Rempart</h4>
-                                    <p>2019 - 2021</p>
-                                    <p>High School Diploma in Science and Technology for Industry and Sustainable Development</p>
-                                </a>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6">
-                                <a href="pages/luminy.html" class="edu-link education-entry text-center wow zoomIn" data-wow-delay="0.4s">
-                                    <img src="img/portfolio/p3.jpg" alt="Luminy University Institute of Technology logo" class="edu-logo img-responsive center-block">
-                                    <h4>Luminy University Institute of Technology</h4>
-                                    <p>2021 - 2025</p>
-                                    <p>University Bachelor of Technology in networks and telecoms </p>
-                                </a>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6">
-                                <a href="pages/efrei_paris.html" class="edu-link education-entry text-center wow zoomIn" data-wow-delay="0.4s">
-                                    <img src="img/portfolio/p4.jpg" alt="Efrei Paris logo" class="edu-logo img-responsive center-block">
-                                    <h4>Efrei Paris</h4>
-                                    <p>Cybersécurité engineering program</p>
-                                </a>
-                            </div>
-
-                        </div> <!-- /.row -->
-                    </div> <!-- /.container -->
-
-
-                </div>
-                <!-- End education logos -->
-            </section>
-            <!-- End Services -->
-            
-            <section id="experiences" class="page text-center">
-                <!-- Begin page header-->
-                <div class="page-header-wrapper">
-                    <div class="container">
-                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2>Expériences</h2>
-                            <div class="devider"></div>
-                            <p class="subtitle">Mes expériences précédentes</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End page header-->
-            
-                <!-- Begin experience logos -->
-                <div class="experience-wrapper">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6">
-
-                                <a href="pages/exp_wok_udon.html" class="exp-link experience-entry text-center wow zoomIn" data-wow-delay="0">
-
-                                    <img src="img/portfolio/p5.jpg" alt="WOK UDON logo" class="exp-logo img-responsive center-block">
-                                    <h4>WOK UDON</h4>
-                                    <p>Serveur en restaurant</p>
-                                    <p>July 2021 - August 2021</p>
-
-                                </a>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6">
-                                <a href="pages/exp_order_picker.html" class="exp-link experience-entry text-center wow zoomIn" data-wow-delay="0.2s">
-
-                                    <img src="img/portfolio/p6.jpg" alt="Préparateur de commandes company logo" class="exp-logo img-responsive center-block">
-                                    <h4>Préparateur de commandes</h4>
-                                    <p>August 2022 - September 2022</p>
-                                    <p>Gestion des stocks</p>
-
-                                </a>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6">
-                                <a href="pages/exp_network_technician.html" class="exp-link experience-entry text-center wow zoomIn" data-wow-delay="0.4s">
-
-                                    <img src="img/portfolio/p7.jpg" alt="Technicien réseau et système logo" class="exp-logo img-responsive center-block">
-                                    <h4>Technicien infrastructure</h4>
-                                    <p>Avril 2024 à Juin 2024</p>
-                                   
-
-                                </a>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <a href="pages/exp_clinique_bonneveine.html" class="exp-link experience-entry text-center wow zoomIn" data-wow-delay="0.6s">
-                                    <img src="img/portfolio/p8.jpg" alt="4Connect logo" class="exp-logo img-responsive center-block">
-                                    <h4>Technicien réseau et système</h4>
-                                    <p>17 mars - 29 aout</p>
-                                    <p>Association Bonneveine-Saint Joseph - Clinique Bonneveine</p>
-                                </a>
-                            </div>
-
-                        </div> <!-- /.row -->
-                    </div> <!-- /.container -->
-
-
-                </div>
-                <!-- End experience logos -->
-            </section>
-            <!-- End Services -->
-              
-              
-              
-            <!-- Begin testimonials -->
-            <section id="testimonial-section">
-                <div id="testimonial-trigger" class="testimonial text-white parallax" data-stellar-background-ratio="0.5" style="background-image: url(img/testimonial-bg.jpg);">
-                    <div class="cover"></div>
-                    <!-- Begin page header-->
-                    <div class="page-header-wrapper">
-                        <div class="container">
-                            <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                                <h2>Citations</h2>
-                                <div class="devider"></div>
-                                <p class="subtitle">Quelques motivations</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End page header-->
-                    <div class="container">
-                        <div class="testimonial-inner center-block text-center">
-                            <div id="owl-testimonial" class="owl-carousel">
-                                <div class="item">
-                                    <blockquote>
-                                        <p>"You suffered so long, I think it's time for a comeback".</p>
-                                        <footer><cite title="Source Title">idk</cite></footer>
-                                    </blockquote>
-                                </div>
-                                <div class="item">
-                                    <blockquote>
-                                        <p>"Your potential is endless ... Go do what you were created to do"</p>
-                                        <footer><cite title="Source Title">idk</cite></footer>
-                                    </blockquote>
-                                </div>
-                                <div class="item">
-                                    <blockquote>
-                                        <p>"God gives the hardest battle to the strongest soldier".</p>
-                                        <footer><cite title="Source Title">idk</cite></footer>
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- End testimonials -->
-                
-                
-            <!-- Begin Portfolio -->
-            <section id="portfolio-section" class="page bg-style1">
-            	<div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="portfolio">
-                                <!-- Begin page header-->
-                                <div class="page-header-wrapper">
-                                    <div class="container">
-                                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                                            <h2>Mes réalisations</h2>
-                                            <div class="devider"></div>
-                                            <p class="subtitle">Ce dont je suis fier</p>
-                                        </div>
+                            <!-- Formation 1 -->
+                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="formation-card">
+                                    <div class="card-header">
+                                        <div class="level-badge level-1">Secondaire</div>
+                                        <i class="fa fa-book"></i>
                                     </div>
-                                </div>
-                                <!-- End page header-->
-                                <div class="portfoloi_content_area" >
-                                    <div class="portfolio_menu" id="filters">
-                                        <ul>
-                                            <li class="active_prot_menu"><a href="#porfolio_menu" data-filter="*">tous</a></li>
-                                            <li><a href="#porfolio_menu" data-filter=".Cybersecurity" >Cybersécurité</a></li>
-                                              <li><a href="#porfolio_menu" data-filter=".Development">Développement</a></li>
-                                            <li><a href="#porfolio_menu" data-filter=".IoT">IoT</a></li>
+                                    <div class="card-body">
+                                        <h4>Baccalauréat Général</h4>
+                                        <p class="institution">Lycée Antonin Artaud</p>
+                                        <p class="date-info">2020 - 2023</p>
+                                        <div class="location-info">
+                                            <i class="fa fa-map-marker"></i>
+                                            <span>Marseille, France</span>
+                                        </div>
+                                        <div class="specialities">
+                                            <span class="badge-spec">NSI</span>
+                                            <span class="badge-spec">Mathématiques</span>
+                                        </div>
+                                        <ul class="details-list">
+                                            <li><i class="fa fa-star"></i> Mention Assez Bien</li>
+                                            <li><i class="fa fa-star"></i> Projet scientifique récompensé</li>
                                         </ul>
                                     </div>
-                                    <div class="portfolio_content">
-                                        <div class="row"  id="portfolio">
-                                            <div class="col-xs-12 col-sm-4 Development">
-                                                <div class="portfolio_single_content">
-                                                    <img src="img/twitter.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="pages/data_processing.html">Traitement des données Twitter</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 IoT">
-                                                <div class="portfolio_single_content">
-                                                    <img src="img/escape_game.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="pages/escape_game.html">Escape Game</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 Development">
-                                                <div class="portfolio_single_content">
-                                                    <img src="img/dhcp.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="pages/dhcp.html">Gestion centralisée des serveurs DHCP</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 IoT">
-                                                <div class="portfolio_single_content">
-                                                    <img src="img/coffrefort.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="pages/connected_safe.html">Coffre-fort connecté</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 Development">
-                                                <div class="portfolio_single_content">
-                                                    <img src="img/logo-kivymd.png" alt="title"/>
-                                                    <div>
-                                                        <a href="pages/hotel_app.html">Application de gestion hôtelière</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 IoT">
-                                                <div class="portfolio_single_content">
-                                                    <img src="img/mosquitto.png" alt="title"/>
-                                                    <div>
-                                                        <a href="pages/mosquitto.html">Mosquitto</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
-                                            
-                                            <div class="col-xs-12 col-sm-4 Cybersecurity">
-                                                <div class="portfolio_single_content">
-                                                    <img src="img/pentesting.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="pages/pentesting.html">Pentesting</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="card-footer">
+                                        <span class="progress-indicator">25%</span>
                                     </div>
                                 </div>
-                            
+                            </div>
+
+                            <!-- Formation 2 -->
+                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="formation-card">
+                                    <div class="card-header">
+                                        <div class="level-badge level-2">Supérieur</div>
+                                        <i class="fa fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>BUT Réseaux et Télécommunications</h4>
+                                        <p class="institution">Aix-Marseille University</p>
+                                        <p class="date-info">2023 - 2025</p>
+                                        <div class="location-info">
+                                            <i class="fa fa-map-marker"></i>
+                                            <span>Marseille, France</span>
+                                        </div>
+                                        <div class="specialities">
+                                            <span class="badge-spec">Option IR</span>
+                                            <span class="badge-spec">Cybersecurity</span>
+                                        </div>
+                                        <ul class="details-list">
+                                            <li><i class="fa fa-star"></i> Infrastructure IT</li>
+                                            <li><i class="fa fa-star"></i> Stage 16 semaines</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <span class="progress-indicator">50%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Formation 3 -->
+                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.6s">
+                                <div class="formation-card">
+                                    <div class="card-header">
+                                        <div class="level-badge level-3">Certifications</div>
+                                        <i class="fa fa-certificate"></i>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>Certifications Professionnelles</h4>
+                                        <p class="institution">Divers Organismes</p>
+                                        <p class="date-info">2024 - 2025</p>
+                                        <div class="location-info">
+                                            <i class="fa fa-globe"></i>
+                                            <span>En ligne</span>
+                                        </div>
+                                        <div class="specialities">
+                                            <span class="badge-spec">CompTIA</span>
+                                            <span class="badge-spec">Cisco</span>
+                                        </div>
+                                        <ul class="details-list">
+                                            <li><i class="fa fa-star"></i> Security+</li>
+                                            <li><i class="fa fa-star"></i> CCNA Foundation</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <span class="progress-indicator">75%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Formation 4 -->
+                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.8s">
+                                <div class="formation-card active">
+                                    <div class="card-header">
+                                        <div class="level-badge level-4">Continues</div>
+                                        <i class="fa fa-rocket"></i>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4>Formations Continues</h4>
+                                        <p class="institution">Apprentissage Autonome</p>
+                                        <p class="date-info">2024 - Présent</p>
+                                        <div class="location-info">
+                                            <i class="fa fa-globe"></i>
+                                            <span>En ligne</span>
+                                        </div>
+                                        <div class="specialities">
+                                            <span class="badge-spec">Python</span>
+                                            <span class="badge-spec">Linux</span>
+                                        </div>
+                                        <ul class="details-list">
+                                            <li><i class="fa fa-star"></i> Cybersécurité avancée</li>
+                                            <li><i class="fa fa-star"></i> Pentesting</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <span class="progress-indicator">100%</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- End formations cards -->
+
+                <!-- Skills acquired section -->
+                <div class="skills-acquired-wrapper">
+                    <div class="container">
+                        <h3 class="section-title wow fadeInDown" data-wow-delay="0.2s">
+                            Compétences Acquises
+                        </h3>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="skill-acquired-item">
+                                    <div class="skill-icon">
+                                        <i class="fa fa-server"></i>
+                                    </div>
+                                    <h5>Infrastructure</h5>
+                                    <p>Active Directory, VPN, Firewall, Serveurs</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="skill-acquired-item">
+                                    <div class="skill-icon">
+                                        <i class="fa fa-shield"></i>
+                                    </div>
+                                    <h5>Cybersécurité</h5>
+                                    <p>Audit, Pentesting, OSINT, Threat Intel</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="skill-acquired-item">
+                                    <div class="skill-icon">
+                                        <i class="fa fa-code"></i>
+                                    </div>
+                                    <h5>Programmation</h5>
+                                    <p>Python, Bash, PowerShell, SQL</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
+                                <div class="skill-acquired-item">
+                                    <div class="skill-icon">
+                                        <i class="fa fa-cogs"></i>
+                                    </div>
+                                    <h5>Outils</h5>
+                                    <p>Cisco, Linux, Windows, LibreNMS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End skills acquired section -->
             </section>
-            <!-- End portfolio -->
-            
-                
-                
-         
-                
-                
-                
-                
-                
-                
-            <!-- Begin certifications -->
-            <section id="certifications-section">
+            <!-- End formations section -->
+
+            <!-- Begin Experiences section -->
+            <section id="experiences" class="page text-center experiences-timeline">
                 <!-- Begin page header-->
                 <div class="page-header-wrapper">
                     <div class="container">
                         <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2>Mes certifications</h2>
+                            <h2>Expériences Professionnelles</h2>
                             <div class="devider"></div>
-                            <p class="subtitle">Celles qui prouvent mes compétences</p>
+                            <p class="subtitle">My professional journey</p>
                         </div>
                     </div>
                 </div>
                 <!-- End page header-->
-                <div class="container">
-                    <h3 class="cert-category">Stormshield</h3>
-                    <div id="owl-certifications-stormshield" class="owl-carousel">
-                        <a href="pages/csna.html" class="cert-link">
-                            <figure class="cert-entry" itemscope itemtype="http://schema.org/CreativeWork">
-                                <img src="img/partners/csna.png" alt="Stormshield CSNA certification" class="cert-logo" itemprop="image">
-                                <figcaption itemprop="name">Stormshield CSNA</figcaption>
-                            </figure>
-                        </a>
-                        <a href="pages/stormshield_security.html" class="cert-link">
-                            <figure class="cert-entry" itemscope itemtype="http://schema.org/CreativeWork">
-                                <img src="img/partners/stormshield.png" alt="Stormshield Security certification" class="cert-logo" itemprop="image">
-                                <figcaption itemprop="name">Stormshield Security</figcaption>
-                            </figure>
-                        </a>
-                    </div>
-
-                    <h3 class="cert-category">Cisco</h3>
-                    <div id="owl-certifications-cisco" class="owl-carousel">
-                        <a href="pages/ccna.html" class="cert-link">
-                            <figure class="cert-entry" itemscope itemtype="http://schema.org/CreativeWork">
-                                <img src="img/partners/ccna.png" alt="Cisco CCNA certification" class="cert-logo" itemprop="image">
-                                <figcaption itemprop="name">Cisco CCNA</figcaption>
-                            </figure>
-                        </a>
-                    </div>
-
-                    <h3 class="cert-category">ANSSI</h3>
-                    <div id="owl-certifications-anssi" class="owl-carousel">
-                        <a href="pages/secnum.html" class="cert-link">
-                            <figure class="cert-entry" itemscope itemtype="http://schema.org/CreativeWork">
-                                <img src="img/partners/secnum.png" alt="SecNum Academy certification" class="cert-logo" itemprop="image">
-                                <figcaption itemprop="name">SecNum Academy</figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                </div>
-            </section>
-            <!-- End certifications -->
-                
-                
-                
-                
-            <!-- Begin social section -->
-			<section id="social-section">
             
-                 <!-- Begin page header-->
-                <div class="page-header-wrapper">
+                <!-- Begin experience timeline -->
+                <div class="experience-timeline-wrapper">
                     <div class="container">
-                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2>Rejoignez-moi</h2>
-                            <div class="devider"></div>
-                            <p class="subtitle">Suivez-moi sur les réseaux sociaux</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End page header-->
-                
-                <div class="container">
-                	<ul class="social-list">
-                		<li> <a href="https://www.linkedin.com/in/david-zhang-650a16239/" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.5s"><span class="rotate-box-icon"><i class="fa fa-linkedin"></i></span></a></li>
-                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.6s"><span class="rotate-box-icon"><i class="fa fa-pinterest-p"></i></span></a></li>
-                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.7s"><span class="rotate-box-icon"><i class="fa fa-instagram"></i></span></a></li>                  
-                    </ul>
-                </div>
-                
-            </section>
-            <!-- End social section -->
-                
-                
-                
-                
-            <!-- Begin contact section -->
-			<section id="contact-section" class="page text-white parallax" data-stellar-background-ratio="0.5" style="background-image: url(img/map-bg.jpg);">
-            <div class="cover"></div>
-            
-                 <!-- Begin page header-->
-                <div class="page-header-wrapper">
-                    <div class="container">
-                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2>Contacts</h2>
-                            <div class="devider"></div>
-                            <p class="subtitle">Tous les moyens de me contacter</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End page header-->
-                
-                <div class="contact wow bounceInRight" data-wow-delay="0.4s">
-                    <div class="container">
-                    	<div class="row">
-                        
-                            <div class="col-sm-6">
-                                <div class="contact-info">
-                                    <h4>Adresse</h4>
-                                    <ul class="contact-address">
-			                            <li><i class="fa fa-map-marker fa-lg"></i>  100 Limpbiscayne Blvd. (North) 17st Floor ,<br><br>        New World Tower New York ,<br><br>        New York, USA, 33148</li>
-			                            <li><i class="fa fa-phone"></i>  +33 07 82 29 03 55</li>
-			                            <li><i class="fa fa-envelope"></i> david.zhang@etu.univ-amu.fr</li>
-			                        </ul>
+                        <div class="timeline">
+                            <!-- Experience 1 -->
+                            <div class="timeline-item wow slideInLeft" data-wow-delay="0.2s">
+                                <div class="timeline-marker">
+                                    <i class="fa fa-briefcase"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h3>Technicien Systèmes et Réseaux - Stage</h3>
+                                    <p class="company-name">Fondation Saint Joseph - Clinique Bonneveine</p>
+                                    <p class="location"><i class="fa fa-map-marker"></i> Marseille, France</p>
+                                    <p class="date-range"><i class="fa fa-calendar"></i> février 2025 - juillet 2025</p>
+                                    <ul class="experience-details">
+                                        <li><i class="fa fa-check-circle"></i> Analyse des GPOs mises en place dans Active Directory. Gestion des comptes et des droits d'accès</li>
+                                        <li><i class="fa fa-check-circle"></i> Participation à un audit de sécurité mené par Orange Cyberdéfense</li>
+                                        <li><i class="fa fa-check-circle"></i> Documentation des failles et anomalies détectées, identification des machines vulnérables</li>
+                                        <li><i class="fa fa-check-circle"></i> Support informatique aux utilisateurs (VPN, applications métiers, Microsoft 365)</li>
+                                        <li><i class="fa fa-check-circle"></i> Sensibilisation des utilisateurs aux bonnes pratiques en cybersécurité</li>
+                                    </ul>
                                 </div>
                             </div>
-                        
-                        	<div class="col-sm-6">
-                                <div class="contact-form">
-                                	<h4>Écrivez-moi</h4>
-                                    <form role="form">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control input-lg" placeholder="Votre nom" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control input-lg" placeholder="Courriel" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control input-lg" placeholder="Sujet" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <textarea class="form-control input-lg" rows="5" placeholder="Message" required></textarea>
-                                        </div>
-                                        <button type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s">Envoyer</button>
-                                    </form>
-                                </div>	
+
+                            <!-- Experience 2 -->
+                            <div class="timeline-item wow slideInRight" data-wow-delay="0.4s">
+                                <div class="timeline-marker">
+                                    <i class="fa fa-briefcase"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h3>Technicien Infrastructure - Stage</h3>
+                                    <p class="company-name">4Connect</p>
+                                    <p class="location"><i class="fa fa-map-marker"></i> Marseille, France</p>
+                                    <p class="date-range"><i class="fa fa-calendar"></i> mars 2024 - mai 2024</p>
+                                    <ul class="experience-details">
+                                        <li><i class="fa fa-check-circle"></i> Mise en place d'un annuaire Active Directory pour l'entreprise</li>
+                                        <li><i class="fa fa-check-circle"></i> Audit de sécurité de l'Active Directory et mise en œuvre de mesures correctives</li>
+                                        <li><i class="fa fa-check-circle"></i> Déploiement de LibreNMS pour la supervision des serveurs</li>
+                                        <li><i class="fa fa-check-circle"></i> Amélioration de la réactivité de l'équipe technique face aux incidents</li>
+                                    </ul>
+                                </div>
                             </div>
-                                                                                
-                        </div> <!-- /.row -->
-                    </div> <!-- /.container -->
-                </div>
-            </section>
-            <!-- End contact section -->
-                
-                
-                
-                <div class="footer">
-                    <div class="container text-center wow fadeIn" data-wow-delay="0.4s">
-                        <p class="copyright">Copyright &copy; 2024 - Développé par <a href="http://www.imransdesign.com/" class="theme-author">David Zhang</a></p>
+                        </div>
                     </div>
                 </div>
+                <!-- End experience timeline -->
+            </section>
+            <!-- End Experiences section -->
 
-            </footer>
-            <!-- End footer -->
+            <!-- Begin Certifications section -->
+            <section id="certifications" class="page bg-style1 certifications-section">
+                <!-- Begin page header-->
+                <div class="page-header-wrapper">
+                    <div class="container">
+                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                            <h2>Certifications</h2>
+                            <div class="devider"></div>
+                            <p class="subtitle">Diplômes et certifications professionnelles</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End page header-->
 
-            <a href="#" class="scrolltotop"><i class="fa fa-arrow-up"></i></a> <!-- Scroll to top button -->
-                                              
-        </div><!-- body ends -->
-        
-        
-        
-        
-        <!-- Plugins JS -->
-		<script src="inc/jquery/jquery-1.11.1.min.js"></script>
-		<script src="inc/bootstrap/js/bootstrap.min.js"></script>
-		<script src="inc/owl-carousel/js/owl.carousel.min.js"></script>
-		<script src="inc/stellar/js/jquery.stellar.min.js"></script>
-		<script src="inc/animations/js/wow.min.js"></script>
+                <!-- Begin certifications grid -->
+                <div class="certifications-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Obtained: Cisco CCNP ENCOR -->
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="certification-card">
+                                    <div class="cert-icon">
+                                        <i class="fa fa-network-wired"></i>
+                                    </div>
+                                    <h4>CCNP ENCOR</h4>
+                                    <p class="organization">Cisco</p>
+                                    <p class="cert-description">
+                                        <i class="fa fa-check"></i> Conception et mise en œuvre de réseaux d'entreprise<br>
+                                        <i class="fa fa-check"></i> Routage, switching, services réseau
+                                    </p>
+                                    <div class="cert-meta">
+                                        <span class="cert-date">Date : À renseigner</span>
+                                        <a href="#" class="cert-link" target="_blank">Vérifier</a>
+                                    </div>
+                                    <div class="cert-status">
+                                        <span class="badge-status obtained">Obtenue</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Obtained: Stormshield CSNA -->
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="certification-card">
+                                    <div class="cert-icon">
+                                        <i class="fa fa-shield"></i>
+                                    </div>
+                                    <h4>CSNA</h4>
+                                    <p class="organization">Stormshield</p>
+                                    <p class="cert-description">
+                                        <i class="fa fa-check"></i> Administration des appliances Stormshield<br>
+                                        <i class="fa fa-check"></i> Configuration des politiques de sécurité
+                                    </p>
+                                    <div class="cert-meta">
+                                        <span class="cert-date">Date : À renseigner</span>
+                                        <a href="#" class="cert-link" target="_blank">Vérifier</a>
+                                    </div>
+                                    <div class="cert-status">
+                                        <span class="badge-status obtained">Obtenue</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Obtained: Stormshield CSNE -->
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                                <div class="certification-card">
+                                    <div class="cert-icon">
+                                        <i class="fa fa-certificate"></i>
+                                    </div>
+                                    <h4>CSNE</h4>
+                                    <p class="organization">Stormshield</p>
+                                    <p class="cert-description">
+                                        <i class="fa fa-check"></i> Expertise avancée Stormshield<br>
+                                        <i class="fa fa-check"></i> Architectures réseau sécurisées
+                                    </p>
+                                    <div class="cert-meta">
+                                        <span class="cert-date">Date : À renseigner</span>
+                                        <a href="#" class="cert-link" target="_blank">Vérifier</a>
+                                    </div>
+                                    <div class="cert-status">
+                                        <span class="badge-status obtained">Obtenue</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Obtained: Cisco Network Security -->
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.8s">
+                                <div class="certification-card">
+                                    <div class="cert-icon">
+                                        <i class="fa fa-lock"></i>
+                                    </div>
+                                    <h4>Sécurité réseau</h4>
+                                    <p class="organization">Cisco</p>
+                                    <p class="cert-description">
+                                        <i class="fa fa-check"></i> Concepts de sécurité réseau Cisco<br>
+                                        <i class="fa fa-check"></i> Firewalls, VPN et segmentation
+                                    </p>
+                                    <div class="cert-meta">
+                                        <span class="cert-date">Date : Sep 2024</span>
+                                        <a href="#" class="cert-link" target="_blank">Vérifier</a>
+                                    </div>
+                                    <div class="cert-status">
+                                        <span class="badge-status obtained">Obtenue</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Obtained: CCNA 1,2,3 -->
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1s">
+                                <div class="certification-card">
+                                    <div class="cert-icon">
+                                        <i class="fa fa-graduation-cap"></i>
+                                    </div>
+                                    <h4>Modules CCNA 1,2,3</h4>
+                                    <p class="organization">Cisco</p>
+                                    <p class="cert-description">
+                                        <i class="fa fa-check"></i> Fondamentaux réseau et protocoles<br>
+                                        <i class="fa fa-check"></i> Configuration et dépannage d'équipements
+                                    </p>
+                                    <div class="cert-meta">
+                                        <span class="cert-date">Date : À renseigner</span>
+                                        <a href="#" class="cert-link" target="_blank">Vérifier</a>
+                                    </div>
+                                    <div class="cert-status">
+                                        <span class="badge-status obtained">Obtenue</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- In-progress: CompTIA Security+ -->
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.2s">
+                                <div class="certification-card">
+                                    <div class="cert-icon">
+                                        <i class="fa fa-shield-alt"></i>
+                                    </div>
+                                    <h4>Security+</h4>
+                                    <p class="organization">CompTIA</p>
+                                    <p class="cert-description">
+                                        <i class="fa fa-clock"></i> Sécurité des systèmes et gestion des risques
+                                    </p>
+                                    <div class="cert-meta">
+                                        <span class="cert-date">Date : En cours</span>
+                                        <a href="#" class="cert-link" target="_blank">Vérifier</a>
+                                    </div>
+                                    <div class="cert-status">
+                                        <span class="badge-status in-progress">En cours</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- In-progress: Microsoft AZ-900 -->
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.4s">
+                                <div class="certification-card">
+                                    <div class="cert-icon">
+                                        <i class="fa fa-cloud"></i>
+                                    </div>
+                                    <h4>AZ-900</h4>
+                                    <p class="organization">Microsoft</p>
+                                    <p class="cert-description">
+                                        <i class="fa fa-clock"></i> Concepts de base du cloud Azure
+                                    </p>
+                                    <div class="cert-meta">
+                                        <span class="cert-date">Date : En cours</span>
+                                        <a href="#" class="cert-link" target="_blank">Vérifier</a>
+                                    </div>
+                                    <div class="cert-status">
+                                        <span class="badge-status in-progress">En cours</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End certifications grid -->
+            </section>
+            <!-- End Certifications section -->
+
+            <!-- Begin Portfolio section -->
+            <section id="portfolio-section" class="page portfolio-section">
+                <!-- Begin page header-->
+                <div class="page-header-wrapper">
+                    <div class="container">
+                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                            <h2>Projets</h2>
+                            <div class="devider"></div>
+                            <p class="subtitle">Mes réalisations et projets éducatifs</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End page header-->
+
+                <!-- Begin portfolio grid -->
+                <div class="portfolio-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Project 1 -->
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                                <a href="pages/hotel_app.html" class="portfolio-item">
+                                    <div class="portfolio-card">
+                                        <div class="project-icon">
+                                            <i class="fa fa-hotel"></i>
+                                        </div>
+                                        <h4>Application de Gestion d'Hôtel</h4>
+                                        <p class="tech-stack">Python • Base de données • Interface graphique</p>
+                                        <p class="project-desc">Application de gestion d'hôtel avec système de réservation et gestion des clients</p>
+                                        <div class="learn-more">
+                                            <span>En savoir plus <i class="fa fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Project 2 -->
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                                <a href="pages/escape_game.html" class="portfolio-item">
+                                    <div class="portfolio-card">
+                                        <div class="project-icon">
+                                            <i class="fa fa-gamepad"></i>
+                                        </div>
+                                        <h4>Escape Game Interactif</h4>
+                                        <p class="tech-stack">Python • Programmation orientée objet</p>
+                                        <p class="project-desc">Jeu d'énigmes interactif avec système de points et niveaux de difficulté</p>
+                                        <div class="learn-more">
+                                            <span>En savoir plus <i class="fa fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Project 3 -->
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                                <a href="pages/mosquitto.html" class="portfolio-item">
+                                    <div class="portfolio-card">
+                                        <div class="project-icon">
+                                            <i class="fa fa-cloud"></i>
+                                        </div>
+                                        <h4>MQTT Mosquitto Server</h4>
+                                        <p class="tech-stack">MQTT • IoT • Linux • Docker</p>
+                                        <p class="project-desc">Déploiement et configuration d'un serveur MQTT pour l'IoT et la communication temps réel</p>
+                                        <div class="learn-more">
+                                            <span>En savoir plus <i class="fa fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Project 4 -->
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.8s">
+                                <a href="pages/connected_safe.html" class="portfolio-item">
+                                    <div class="portfolio-card">
+                                        <div class="project-icon">
+                                            <i class="fa fa-lock"></i>
+                                        </div>
+                                        <h4>Safe Connecté</h4>
+                                        <p class="tech-stack">IoT • Arduino • Sécurité • Réseau</p>
+                                        <p class="project-desc">Coffre-fort connecté avec authentification à distance et monitoring en temps réel</p>
+                                        <div class="learn-more">
+                                            <span>En savoir plus <i class="fa fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Project 5 -->
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1s">
+                                <a href="pages/pentesting.html" class="portfolio-item">
+                                    <div class="portfolio-card">
+                                        <div class="project-icon">
+                                            <i class="fa fa-shield"></i>
+                                        </div>
+                                        <h4>Audit de Pénétration</h4>
+                                        <p class="tech-stack">Pentesting • OSINT • Cybersécurité</p>
+                                        <p class="project-desc">Test de pénétration complet avec rapport d'audit et recommandations de sécurité</p>
+                                        <div class="learn-more">
+                                            <span>En savoir plus <i class="fa fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Project 6 -->
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.2s">
+                                <a href="pages/data_processing.html" class="portfolio-item">
+                                    <div class="portfolio-card">
+                                        <div class="project-icon">
+                                            <i class="fa fa-database"></i>
+                                        </div>
+                                        <h4>Pipeline de Traitement de Données</h4>
+                                        <p class="tech-stack">Python • SQL • Pandas • Automatisation</p>
+                                        <p class="project-desc">Pipeline d'ETL pour traitement et analyse de données volumineuses</p>
+                                        <div class="learn-more">
+                                            <span>En savoir plus <i class="fa fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End portfolio grid -->
+            </section>
+            <!-- End Portfolio section -->
+
+            <!-- Begin Contact section -->
+            <section id="contact-section" class="page contact-section">
+                <div class="container">
+                    <div class="row">
+                        <!-- Contact Info -->
+                        <div class="col-md-6 contact-info wow fadeInLeft" data-wow-delay="0.3s">
+                            <div class="page-header">
+                                <h2>Me Contacter</h2>
+                                <div class="devider"></div>
+                                <p>N'hésitez pas à me contacter pour discuter de vos projets ou pour toute opportunité professionnelle.</p>
+                            </div>
+
+                            <div class="contact-details">
+                                <!-- Email -->
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h4>Email</h4>
+                                        <a href="mailto:davidzhangskr@gmail.fr">davidzhangskr@gmail.fr</a>
+                                    </div>
+                                </div>
+
+                                <!-- LinkedIn -->
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fa fa-linkedin"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h4>LinkedIn</h4>
+                                        <a href="https://linkedin.com/in/david-zhang" target="_blank">linkedin.com/in/david-zhang-fr</a>
+                                    </div>
+                                </div>
+
+                                <!-- Location -->
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fa fa-map-marker"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h4>Localisation</h4>
+                                        <p>Paris, France</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="col-md-6 social-section wow fadeInRight" data-wow-delay="0.3s">
+                            <div class="social-content">
+                                <div class="page-header">
+                                    <h2>Suivez-moi</h2>
+                                    <div class="devider"></div>
+                                    <p>Retrouvez-moi sur les réseaux sociaux pour suivre mes actualités.</p>
+                                </div>
+
+                                <div class="social-links">
+                                    <a href="https://linkedin.com/in/david-zhang-fr" class="social-icon linkedin" title="LinkedIn" target="_blank">
+                                        <i class="fa fa-linkedin"></i>
+                                        <span>LinkedIn</span>
+                                    </a>
+                                    <a href="https://github.com" class="social-icon github" title="GitHub" target="_blank">
+                                        <i class="fa fa-github"></i>
+                                        <span>GitHub</span>
+                                    </a>
+                                    <a href="https://twitter.com" class="social-icon twitter" title="Twitter" target="_blank">
+                                        <i class="fa fa-twitter"></i>
+                                        <span>Twitter</span>
+                                    </a>
+                                    <a href="mailto:david.zhang@example.com" class="social-icon email" title="Email">
+                                        <i class="fa fa-envelope"></i>
+                                        <span>Email</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Contact section -->
+
+        </div> <!-- /.body -->
+
+        <!-- Java Script -->
+        <script src="inc/jquery/jquery-1.11.1.min.js"></script> <!-- jQuery library -->
+        <script src="inc/bootstrap/js/bootstrap.min.js"></script> <!-- Bootstrap JS -->
+        <script src="inc/animations/js/wow.min.js"></script> <!-- WOW animations JS -->
+        <script src="inc/owl-carousel/js/owl.carousel.min.js"></script> <!-- OWL Carousel -->
+        <script src="inc/stellar/js/jquery.stellar.min.js"></script>
         <script src="inc/waypoints.min.js"></script>
-		<script src="inc/isotope.pkgd.min.js"></script>
-		<script src="inc/classie.js"></script>
-		<script src="inc/jquery.easing.min.js"></script>
-		<script src="inc/jquery.counterup.min.js"></script>
-		<script src="inc/smoothscroll.js"></script>
+        <script src="inc/isotope.pkgd.min.js"></script>
+        <script src="inc/classie.js"></script>
+        <script src="inc/jquery.easing.min.js"></script>
+        <script src="inc/jquery.counterup.min.js"></script>
+        <script src="inc/smoothscroll.js"></script>
+        <script src="js/theme.js"></script>
 
-		<!-- Theme JS -->
-		<script src="js/theme.js"></script>
+    </body>
 
-    </body> 
-        
-            
 </html>

@@ -26,13 +26,13 @@ body {
 
 /* ===== HEADER & NAVBAR ===== */
 .header-main {
-    background: rgba(10, 22, 40, 0.95);
+    background: #0a1628;
     border-bottom: 1px solid var(--border-color);
     backdrop-filter: blur(10px);
 }
 
 .navbar-default {
-    background: rgba(10, 22, 40, 0.95) !important;
+    background: #0a1628 !important;
     border-bottom: 1px solid var(--border-color) !important;
     box-shadow: 0 2px 20px rgba(0, 212, 255, 0.1);
 }
