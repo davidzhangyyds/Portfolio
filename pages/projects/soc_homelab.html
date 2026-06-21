@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOC Homelab — David Zhang</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --bg2: #161b22;
+      --bg3: #21262d;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text2: #8b949e;
+      --text3: #484f58;
+      --green: #3fb950;
+      --green-dim: #0d2b12;
+      --green-glow: rgba(63, 185, 80, 0.15);
+      --blue: #388bfd;
+      --blue-dim: #1f3357;
+      --amber: #d29922;
+      --amber-dim: #2d2007;
+      --red: #f85149;
+      --red-dim: #3d1212;
+      --purple: #bc8cff;
+      --purple-dim: #1e1035;
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13,17,23,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text2);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--green); }
+    .nav-back i { font-size: 11px; }
+
+    .nav-title {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text3);
+      letter-spacing: 0.05em;
+    }
+
+    .nav-badge {
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--green-dim);
+      color: var(--green);
+      border: 1px solid rgba(63,185,80,0.3);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 32px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(63,185,80,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 70%, rgba(56,139,253,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(48,54,61,0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(48,54,61,0.3) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero-breadcrumb {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text3);
+      margin-bottom: 24px;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: var(--green-dim);
+      border: 1px solid rgba(63,185,80,0.3);
+      border-radius: 4px;
+      padding: 4px 12px;
+      margin-bottom: 20px;
+    }
+    .hero-label::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero h1 {
+      font-family: var(--mono);
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .hero h1 .accent { color: var(--green); }
+
+    .hero-sub {
+      font-size: 16px;
+      color: var(--text2);
+      line-height: 1.6;
+      max-width: 560px;
+      margin-bottom: 40px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 48px;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 6px;
+      border: 1px solid;
+    }
+    .tag-g { background: var(--green-dim); color: var(--green); border-color: rgba(63,185,80,0.3); }
+    .tag-b { background: var(--blue-dim); color: var(--blue); border-color: rgba(56,139,253,0.3); }
+    .tag-a { background: var(--amber-dim); color: var(--amber); border-color: rgba(210,153,34,0.3); }
+    .tag-r { background: var(--red-dim); color: var(--red); border-color: rgba(248,81,73,0.3); }
+    .tag-p { background: var(--purple-dim); color: var(--purple); border-color: rgba(188,140,255,0.3); }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      max-width: 600px;
+    }
+
+    .stat {
+      background: var(--bg2);
+      padding: 20px 24px;
+      text-align: center;
+    }
+    .stat-val {
+      font-family: var(--mono);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--green);
+      display: block;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--text3);
+      margin-top: 4px;
+      font-family: var(--mono);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 32px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text3);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+
+    .section-title {
+      font-family: var(--mono);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── ARCHITECTURE ── */
+    .arch-terminal {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .term-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 16px;
+      background: var(--bg3);
+      border-bottom: 1px solid var(--border);
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #ffbd2e; }
+    .dot-g { background: #28c840; }
+    .term-label {
+      margin-left: 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text3);
+    }
+
+    .term-body {
+      padding: 24px;
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .term-line { display: flex; align-items: flex-start; gap: 10px; }
+    .term-prompt { color: var(--green); flex-shrink: 0; }
+    .term-cmd { color: var(--text2); }
+    .term-comment { color: var(--text3); }
+    .term-val { color: var(--blue); }
+    .term-warn { color: var(--amber); }
+
+    /* ── ARCH DIAGRAM ── */
+    .arch-diagram {
+      margin-top: 32px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .arch-layers {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .arch-layer {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .arch-layer-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      width: 80px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+
+    .arch-layer-nodes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .arch-node {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg3);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .arch-node:hover { border-color: var(--green); color: var(--green); }
+    .arch-node i { font-size: 13px; }
+    .arch-node.n-green { border-color: rgba(63,185,80,0.3); color: var(--green); background: var(--green-dim); }
+    .arch-node.n-blue { border-color: rgba(56,139,253,0.3); color: var(--blue); background: var(--blue-dim); }
+    .arch-node.n-amber { border-color: rgba(210,153,34,0.3); color: var(--amber); background: var(--amber-dim); }
+    .arch-node.n-red { border-color: rgba(248,81,73,0.3); color: var(--red); background: var(--red-dim); }
+
+    .arch-arrow {
+      display: flex;
+      justify-content: center;
+      color: var(--text3);
+      font-size: 18px;
+      margin: 4px 0;
+    }
+
+    /* ── STACK ── */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .stack-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.2s;
+    }
+    .stack-card:hover {
+      border-color: var(--green);
+      background: var(--bg3);
+      transform: translateY(-2px);
+    }
+
+    .stack-card-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .stack-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .si-g { background: var(--green-dim); color: var(--green); }
+    .si-b { background: var(--blue-dim); color: var(--blue); }
+    .si-a { background: var(--amber-dim); color: var(--amber); }
+    .si-r { background: var(--red-dim); color: var(--red); }
+    .si-p { background: var(--purple-dim); color: var(--purple); }
+
+    .stack-name {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .stack-role {
+      font-size: 11px;
+      color: var(--text3);
+      font-family: var(--mono);
+    }
+
+    .stack-desc {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.5;
+    }
+
+    /* ── PHASES ── */
+    .phases-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .phase-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .phase-card:hover { border-color: rgba(255,255,255,0.1); }
+
+    .phase-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .phase-badge {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      flex-shrink: 0;
+    }
+    .pb-blue { background: var(--blue-dim); color: var(--blue); border: 1px solid rgba(56,139,253,0.3); }
+    .pb-amber { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(210,153,34,0.3); }
+    .pb-red { background: var(--red-dim); color: var(--red); border: 1px solid rgba(248,81,73,0.3); }
+
+    .phase-head-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .phase-head-sub {
+      margin-left: auto;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text3);
+    }
+
+    .phase-items {
+      padding: 4px 0;
+    }
+
+    .phase-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 24px;
+      border-bottom: 1px solid rgba(48,54,61,0.5);
+    }
+    .phase-item:last-child { border-bottom: none; }
+
+    .phase-item-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .phase-item:hover .phase-item-dot { background: var(--green); }
+
+    .phase-item-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .phase-item-sub {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text3);
+      line-height: 1.5;
+    }
+
+    /* ── CHECKLIST CTA ── */
+    .checklist-cta {
+      background: linear-gradient(135deg, var(--green-dim) 0%, rgba(13,17,23,0) 60%);
+      border: 1px solid rgba(63,185,80,0.2);
+      border-radius: 16px;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .cta-left h3 {
+      font-family: var(--mono);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .cta-left p {
+      font-size: 13px;
+      color: var(--text2);
+      max-width: 380px;
+      line-height: 1.6;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--green);
+      color: #0d1117;
+      border-radius: 8px;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .cta-btn:hover {
+      background: #56d364;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(63,185,80,0.3);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px;
+      text-align: center;
+    }
+    footer p {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text3);
+    }
+    footer a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 0 32px;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 100px 20px 60px; }
+      .section { padding: 60px 20px; }
+      .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      .arch-layer { flex-direction: column; align-items: flex-start; }
+      .arch-layer-label { width: auto; text-align: left; }
+      .checklist-cta { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-back" href="../../index.html">
+      <i class="fa fa-arrow-left"></i> Back to portfolio
+    </a>
+    <span class="nav-title">~/projects/soc-homelab</span>
+    <span class="nav-badge">IN PROGRESS</span>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-inner">
+      <div class="hero-breadcrumb">projects / cybersecurity / soc-homelab</div>
+
+      <div class="hero-label">
+        SOC · SIEM · Blue Team
+      </div>
+
+      <h1>
+        SOC <span class="accent">Homelab</span><br>
+        Detection &amp; Response
+      </h1>
+
+      <p class="hero-sub">
+        A fully self-hosted Security Operations Center simulating real-world attack scenarios,
+        log aggregation, MITRE ATT&amp;CK mapping, and incident response — built to train like a SOC analyst.
+      </p>
+
+      <div class="hero-tags">
+        <span class="tag tag-g">Splunk SIEM</span>
+        <span class="tag tag-b">Wazuh EDR</span>
+        <span class="tag tag-a">Atomic Red Team</span>
+        <span class="tag tag-r">Metasploit</span>
+        <span class="tag tag-p">MITRE ATT&amp;CK</span>
+        <span class="tag tag-g">VirtualBox</span>
+        <span class="tag tag-b">Active Directory</span>
+        <span class="tag tag-a">IDS / ML</span>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-val">3</span>
+          <span class="stat-label">phases</span>
+        </div>
+        <div class="stat">
+          <span class="stat-val">15</span>
+          <span class="stat-label">objectives</span>
+        </div>
+        <div class="stat">
+          <span class="stat-val">5+</span>
+          <span class="stat-label">VMs</span>
+        </div>
+        <div class="stat">
+          <span class="stat-val">ATT&amp;CK</span>
+          <span class="stat-label">framework</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ARCHITECTURE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">Architecture</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="arch-terminal">
+      <div class="term-bar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="term-label">network-topology.sh</span>
+      </div>
+      <div class="term-body">
+        <div class="term-line">
+          <span class="term-prompt">$</span>
+          <span class="term-cmd">echo <span class="term-val">"Host: Windows 11 + VirtualBox"</span> <span class="term-comment"># hypervisor</span></span>
+        </div>
+        <div class="term-line">
+          <span class="term-prompt">$</span>
+          <span class="term-cmd">vm list --network <span class="term-val">SOC_LAB_NET</span></span>
+        </div>
+        <div class="term-line" style="margin-left:24px; color: var(--text2);">
+          ├── <span class="term-val">splunk-server</span>    <span class="term-comment"># Ubuntu 22.04 — SIEM &amp; dashboards</span>
+        </div>
+        <div class="term-line" style="margin-left:24px; color: var(--text2);">
+          ├── <span class="term-val">wazuh-manager</span>    <span class="term-comment"># Ubuntu — EDR &amp; endpoint monitoring</span>
+        </div>
+        <div class="term-line" style="margin-left:24px; color: var(--text2);">
+          ├── <span class="term-val">win-dc</span>           <span class="term-comment"># Windows Server 2019 — Active Directory</span>
+        </div>
+        <div class="term-line" style="margin-left:24px; color: var(--text2);">
+          ├── <span class="term-val">win-target</span>       <span class="term-comment"># Windows 10 — monitored endpoint</span>
+        </div>
+        <div class="term-line" style="margin-left:24px; color: var(--text2);">
+          └── <span class="term-val">kali-attacker</span>    <span class="term-comment"># Kali Linux — isolated attack VM</span>
+        </div>
+        <div class="term-line" style="margin-top:12px;">
+          <span class="term-prompt">$</span>
+          <span class="term-cmd">net info <span class="term-val">SOC_LAB_NET</span></span>
+        </div>
+        <div class="term-line" style="margin-left:24px; color: var(--text2);">
+          <span class="term-warn">ISOLATED</span> — no internet exposure · internal 192.168.56.0/24
+        </div>
+      </div>
+    </div>
+
+    <div class="arch-diagram">
+      <div class="arch-layers">
+        <div class="arch-layer">
+          <span class="arch-layer-label">Attack</span>
+          <div class="arch-layer-nodes">
+            <div class="arch-node n-red"><i class="fa fa-crosshairs"></i> Kali Linux</div>
+            <div class="arch-node n-red"><i class="fa fa-bolt"></i> Metasploit</div>
+            <div class="arch-node n-amber"><i class="fa fa-flask"></i> Atomic Red Team</div>
+          </div>
+        </div>
+        <div class="arch-arrow"><i class="fa fa-arrow-down"></i></div>
+        <div class="arch-layer">
+          <span class="arch-layer-label">Targets</span>
+          <div class="arch-layer-nodes">
+            <div class="arch-node"><i class="fa fa-windows"></i> Win Server 2019 (AD DC)</div>
+            <div class="arch-node"><i class="fa fa-desktop"></i> Windows 10 Endpoint</div>
+            <div class="arch-node"><i class="fa fa-bug"></i> Metasploitable</div>
+          </div>
+        </div>
+        <div class="arch-arrow"><i class="fa fa-arrow-down"></i></div>
+        <div class="arch-layer">
+          <span class="arch-layer-label">Detection</span>
+          <div class="arch-layer-nodes">
+            <div class="arch-node n-blue"><i class="fa fa-eye"></i> Wazuh EDR Agents</div>
+            <div class="arch-node n-blue"><i class="fa fa-filter"></i> Windows Event Logs</div>
+            <div class="arch-node n-blue"><i class="fa fa-rss"></i> Syslog / DNS Logs</div>
+          </div>
+        </div>
+        <div class="arch-arrow"><i class="fa fa-arrow-down"></i></div>
+        <div class="arch-layer">
+          <span class="arch-layer-label">SIEM</span>
+          <div class="arch-layer-nodes">
+            <div class="arch-node n-green"><i class="fa fa-bar-chart"></i> Splunk Enterprise</div>
+            <div class="arch-node n-green"><i class="fa fa-bell"></i> Real-time Alerts</div>
+            <div class="arch-node n-green"><i class="fa fa-map"></i> MITRE ATT&amp;CK Mapping</div>
+            <div class="arch-node n-green"><i class="fa fa-robot" style="font-family:FontAwesome;"></i><i class="fa fa-cog"></i> ML IDS Integration</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STACK -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">Tech Stack</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-card">
+        <div class="stack-card-head">
+          <div class="stack-icon si-g"><i class="fa fa-bar-chart"></i></div>
+          <div>
+            <div class="stack-name">Splunk Enterprise</div>
+            <div class="stack-role">SIEM · Core Platform</div>
+          </div>
+        </div>
+        <p class="stack-desc">Log ingestion from multi-source feeds, operational dashboards, correlation rules, and real-time alerting on IOCs.</p>
+      </div>
+
+      <div class="stack-card">
+        <div class="stack-card-head">
+          <div class="stack-icon si-b"><i class="fa fa-shield"></i></div>
+          <div>
+            <div class="stack-name">Wazuh</div>
+            <div class="stack-role">EDR · Open Source</div>
+          </div>
+        </div>
+        <p class="stack-desc">Endpoint Detection & Response agents on Windows targets. Behavioral detection correlated with Splunk alerts.</p>
+      </div>
+
+      <div class="stack-card">
+        <div class="stack-card-head">
+          <div class="stack-icon si-a"><i class="fa fa-flask"></i></div>
+          <div>
+            <div class="stack-name">Atomic Red Team</div>
+            <div class="stack-role">Attack Simulation</div>
+          </div>
+        </div>
+        <p class="stack-desc">Replays MITRE ATT&CK techniques (T1078, T1059…) to validate detection coverage and tune alert thresholds.</p>
+      </div>
+
+      <div class="stack-card">
+        <div class="stack-card-head">
+          <div class="stack-icon si-r"><i class="fa fa-crosshairs"></i></div>
+          <div>
+            <div class="stack-name">Metasploit</div>
+            <div class="stack-role">Exploitation Framework</div>
+          </div>
+        </div>
+        <p class="stack-desc">Real exploitation runs against Metasploitable from an isolated Kali VM — verifying end-to-end detection chain.</p>
+      </div>
+
+      <div class="stack-card">
+        <div class="stack-card-head">
+          <div class="stack-icon si-p"><i class="fa fa-sitemap"></i></div>
+          <div>
+            <div class="stack-name">MITRE ATT&amp;CK</div>
+            <div class="stack-role">Threat Framework</div>
+          </div>
+        </div>
+        <p class="stack-desc">Every Splunk alert is mapped to an ATT&CK technique. Coverage matrix tracked to measure defensive posture.</p>
+      </div>
+
+      <div class="stack-card">
+        <div class="stack-card-head">
+          <div class="stack-icon si-g"><i class="fa fa-cogs"></i></div>
+          <div>
+            <div class="stack-name">ML IDS</div>
+            <div class="stack-role">Custom Project Integration</div>
+          </div>
+        </div>
+        <p class="stack-desc">Homemade intrusion detection model fed into Splunk — bridging this lab with the ML-IDS personal project.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PHASES -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">Roadmap</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="phases-list">
+
+      <!-- Phase 1 -->
+      <div class="phase-card">
+        <div class="phase-head">
+          <span class="phase-badge pb-blue">Level 1</span>
+          <span class="phase-head-title">Foundations</span>
+          <span class="phase-head-sub">5 objectives</span>
+        </div>
+        <div class="phase-items">
+          <div class="phase-item">
+            <div class="phase-item-dot"></div>
+            <div>
+              <div class="phase-item-title">Document the lab architecture</div>
+              <div class="phase-item-sub">Network diagram · VMs · data flows — published on GitHub</div>
+            </div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-item-dot"></div>
+            <div>
+              <div class="phase-item-title">Multi-source log ingestion in Splunk</div>
+              <div class="phase-item-sub">Windows Event Logs · Linux Syslog · network logs (firewall, DNS)</div>
+            </div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-item-dot"></div>
+            <div>
+              <div class="phase-item-title">Build operational Splunk dashboards</div>
+              <div class="phase-item-sub">Suspicious connections · auth volumes · real-time alerts</div>
+            </div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-item-dot"></div>
+            <div>
+              <div class="phase-item-title">Set up alerts on classic IOCs</div>
+              <div class="phase-item-sub">Brute force · port scan · off-hours logins · privilege escalation</div>
+            </div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-item-dot"></div>
+            <div>
+              <div class="phase-item-title">Write a professional incident report</div>
+              <div class="phase-item-sub">Timeline · detected indicators · response — professional format</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="phase-card">
+        <div class="phase-head">
+          <span class="phase-badge pb-amber">Level 2</span>
+          <span class="phase-head-title">Attack Simulation</span>
+          <span class="phase-head-sub">4 objectives</span>
+        </div>
+        <div class="phase-items">
+          <div class="phase-item">
+            <div class="phase-item-dot"></div>
+            <div>
+              <div class="phase-item-title">Simulate attacks with Atomic Red Team</div>
+              <div class="phase-item-sub">Replay MITRE ATT&amp;CK techniques and verify Splunk detection</div>
+            </div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-item-dot"></div>
+            <div>
+              <div class="phase-item-title">Implement MITRE ATT&amp;CK matrix in the lab</div>
+              <div class="phase-item-sub">Map each alert to an ATT&amp;CK technique (T1078, T1059…)</div>
+            </div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-item-dot"></div>
+            <div>
+              <div class="phase-item-title">Test Metasploit from an isolated attack VM</div>
+              <div class="phase-item-sub">Exploitation on Metasploitable in a closed environment</div>
+            </div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-item-dot"></div>
+            <div>
+              <div class="phase-item-title">Integrate Wazuh open-source EDR</div>
+              <div class="phase-item-sub">EDR + SIEM correlation · behavioral detection on endpoints</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="phase-card">
+        <div class="phase-head">
+          <span class="phase-badge pb-red">Level 3</span>
+          <span class="phase-head-title">Recruiter Value</span>
+          <span class="phase-head-sub">6 objectives</span>
+        </div>
+        <div class="phase-items">
+          <div class="phase-item">
+            <div class="phase-item-dot"></div>
+            <div>
+              <div class="phase-item-title">Publish the lab on GitHub with a structured README</div>
+              <div class="phase-item-sub">Goals · architecture · tools · dashboard screenshots · use cases</div>
+            </div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-item-dot"></div>
+            <div>
+              <div class="phase-item-title">Write a LinkedIn article / detection write-up</div>
+              <div class="phase-item-sub">"I simulated an AD brute force, here's what Splunk caught…"</div>
+            </div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-item-dot"></div>
+            <div>
+              <div class="phase-item-title">Connect the ML IDS to the SIEM</div>
+              <div class="phase-item-sub">Surface ML alerts in Splunk — both projects reinforce each other</div>
+            </div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-item-dot"></div>
+            <div>
+              <div class="phase-item-title">Add a "Quantified Results" section to the CV</div>
+              <div class="phase-item-sub">X alerts configured · Y simulated incidents detected · Z ATT&amp;CK techniques covered</div>
+            </div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-item-dot"></div>
+            <div>
+              <div class="phase-item-title">Prepare a 2-minute oral pitch on the project</div>
+              <div class="phase-item-sub">What I built · why · what I learned — essential for interviews</div>
+            </div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-item-dot"></div>
+            <div>
+              <div class="phase-item-title">Submit the lab to TryHackMe / HackTheBox as reference</div>
+              <div class="phase-item-sub">Optional but adds credibility with technical recruiters</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CHECKLIST CTA -->
+  <div class="section">
+    <div class="checklist-cta">
+      <div class="cta-left">
+        <h3>Interactive Checklist</h3>
+        <p>Track your progress across all 15 objectives — from lab foundations to recruiter-ready deliverables. Click items to mark them complete.</p>
+      </div>
+      <a class="cta-btn" href="../../../soc_homelab_checklist.html" target="_blank">
+        <i class="fa fa-check-square-o"></i>
+        Open Checklist
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>David Zhang · EFREI Paris 2025–2028 · <a href="../../index.html">← Back to portfolio</a></p>
+  </footer>
+
+</body>
+</html>

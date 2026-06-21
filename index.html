@@ -44,6 +44,69 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
+        <style>
+        /* ── Filter bars ── */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin: 0 0 36px;
+        }
+        .filter-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 18px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: transparent;
+            color: #8b949e;
+            font-size: 12px;
+            font-weight: 500;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.02em;
+        }
+        .filter-btn:hover {
+            border-color: rgba(255,255,255,0.3);
+            color: #e6edf3;
+        }
+        .filter-btn.active {
+            background: #388bfd;
+            border-color: #388bfd;
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(56,139,253,0.35);
+        }
+        .filter-btn .filter-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px; height: 18px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            font-size: 10px;
+            font-weight: 700;
+        }
+        /* grid item transition */
+        .filter-col {
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+        .filter-col.hidden {
+            display: none;
+        }
+        /* empty state */
+        .filter-empty {
+            display: none;
+            text-align: center;
+            padding: 48px 0;
+            color: #8b949e;
+            font-size: 14px;
+            width: 100%;
+        }
+        </style>
+
     </head>
 
     <body data-spy="scroll" data-target="#main-navbar">
@@ -543,9 +606,21 @@
                 <!-- Begin certifications grid -->
                 <div class="certifications-wrapper">
                     <div class="container">
-                        <div class="row">
+
+                        <!-- Cert filters -->
+                        <div class="filter-bar" id="cert-filters">
+                            <button class="filter-btn active" data-filter="all" onclick="filterItems('cert', 'all', this)">All <span class="filter-count">7</span></button>
+                            <button class="filter-btn" data-filter="cisco" onclick="filterItems('cert', 'cisco', this)">Cisco</button>
+                            <button class="filter-btn" data-filter="stormshield" onclick="filterItems('cert', 'stormshield', this)">Stormshield</button>
+                            <button class="filter-btn" data-filter="comptia" onclick="filterItems('cert', 'comptia', this)">CompTIA</button>
+                            <button class="filter-btn" data-filter="microsoft" onclick="filterItems('cert', 'microsoft', this)">Microsoft</button>
+                            <button class="filter-btn" data-filter="obtained" onclick="filterItems('cert', 'obtained', this)">✓ Obtained</button>
+                            <button class="filter-btn" data-filter="in-progress" onclick="filterItems('cert', 'in-progress', this)">⏳ In progress</button>
+                        </div>
+
+                        <div class="row" id="cert-grid">
                             <!-- Obtained: Cisco CCNP ENCOR -->
-                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="col-md-6 col-lg-4 wow fadeInUp filter-col" data-wow-delay="0.2s" data-cert="cisco obtained">
                                 <div class="certification-card">
                                     <div class="cert-icon">
                                         <i class="fa fa-network-wired"></i>
@@ -567,7 +642,7 @@
                             </div>
 
                             <!-- Obtained: Stormshield CSNA -->
-                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="col-md-6 col-lg-4 wow fadeInUp filter-col" data-wow-delay="0.4s" data-cert="stormshield obtained">
                                 <div class="certification-card">
                                     <div class="cert-icon">
                                         <i class="fa fa-shield"></i>
@@ -589,7 +664,7 @@
                             </div>
 
                             <!-- Obtained: Stormshield CSNE -->
-                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                            <div class="col-md-6 col-lg-4 wow fadeInUp filter-col" data-wow-delay="0.6s" data-cert="stormshield obtained">
                                 <div class="certification-card">
                                     <div class="cert-icon">
                                         <i class="fa fa-certificate"></i>
@@ -611,7 +686,7 @@
                             </div>
 
                             <!-- Obtained: Cisco Network Security -->
-                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.8s">
+                            <div class="col-md-6 col-lg-4 wow fadeInUp filter-col" data-wow-delay="0.8s" data-cert="cisco obtained">
                                 <div class="certification-card">
                                     <div class="cert-icon">
                                         <i class="fa fa-lock"></i>
@@ -633,7 +708,7 @@
                             </div>
 
                             <!-- Obtained: CCNA 1,2,3 -->
-                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1s">
+                            <div class="col-md-6 col-lg-4 wow fadeInUp filter-col" data-wow-delay="1s" data-cert="cisco obtained">
                                 <div class="certification-card">
                                     <div class="cert-icon">
                                         <i class="fa fa-graduation-cap"></i>
@@ -655,7 +730,7 @@
                             </div>
 
                             <!-- In-progress: CompTIA Security+ -->
-                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.2s">
+                            <div class="col-md-6 col-lg-4 wow fadeInUp filter-col" data-wow-delay="1.2s" data-cert="comptia in-progress">
                                 <div class="certification-card">
                                     <div class="cert-icon">
                                         <i class="fa fa-shield-alt"></i>
@@ -676,7 +751,7 @@
                             </div>
 
                             <!-- In-progress: Microsoft AZ-900 -->
-                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.4s">
+                            <div class="col-md-6 col-lg-4 wow fadeInUp filter-col" data-wow-delay="1.4s" data-cert="microsoft in-progress">
                                 <div class="certification-card">
                                     <div class="cert-icon">
                                         <i class="fa fa-cloud"></i>
@@ -695,6 +770,8 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="filter-empty" id="cert-empty">No certifications match this filter.</div>
                         </div>
                     </div>
                 </div>
@@ -719,9 +796,18 @@
                 <!-- Begin portfolio grid -->
                 <div class="portfolio-wrapper">
                     <div class="container">
-                        <div class="row">
+
+                        <!-- Project filters -->
+                        <div class="filter-bar" id="project-filters">
+                            <button class="filter-btn active" data-filter="all" onclick="filterItems('project', 'all', this)">All <span class="filter-count">7</span></button>
+                            <button class="filter-btn" data-filter="cybersecurity" onclick="filterItems('project', 'cybersecurity', this)">🔒 Cybersecurity</button>
+                            <button class="filter-btn" data-filter="development" onclick="filterItems('project', 'development', this)">💻 Development</button>
+                            <button class="filter-btn" data-filter="networks" onclick="filterItems('project', 'networks', this)">🌐 Networks & IoT</button>
+                        </div>
+
+                        <div class="row" id="project-grid">
                             <!-- Project 1 -->
-                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="col-md-6 col-lg-4 wow fadeInUp filter-col" data-wow-delay="0.2s" data-project="development">
                                 <a href="pages/hotel_app.html" class="portfolio-item">
                                     <div class="portfolio-card">
                                         <div class="project-icon">
@@ -738,7 +824,7 @@
                             </div>
 
                             <!-- Project 2 -->
-                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="col-md-6 col-lg-4 wow fadeInUp filter-col" data-wow-delay="0.4s" data-project="development">
                                 <a href="pages/escape_game.html" class="portfolio-item">
                                     <div class="portfolio-card">
                                         <div class="project-icon">
@@ -755,7 +841,7 @@
                             </div>
 
                             <!-- Project 3 -->
-                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                            <div class="col-md-6 col-lg-4 wow fadeInUp filter-col" data-wow-delay="0.6s" data-project="networks">
                                 <a href="pages/mosquitto.html" class="portfolio-item">
                                     <div class="portfolio-card">
                                         <div class="project-icon">
@@ -772,7 +858,7 @@
                             </div>
 
                             <!-- Project 4 -->
-                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.8s">
+                            <div class="col-md-6 col-lg-4 wow fadeInUp filter-col" data-wow-delay="0.8s" data-project="networks cybersecurity">
                                 <a href="pages/connected_safe.html" class="portfolio-item">
                                     <div class="portfolio-card">
                                         <div class="project-icon">
@@ -789,7 +875,7 @@
                             </div>
 
                             <!-- Project 5 -->
-                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1s">
+                            <div class="col-md-6 col-lg-4 wow fadeInUp filter-col" data-wow-delay="1s" data-project="cybersecurity">
                                 <a href="pages/pentesting.html" class="portfolio-item">
                                     <div class="portfolio-card">
                                         <div class="project-icon">
@@ -806,7 +892,7 @@
                             </div>
 
                             <!-- Project 6 -->
-                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.2s">
+                            <div class="col-md-6 col-lg-4 wow fadeInUp filter-col" data-wow-delay="1.2s" data-project="development">
                                 <a href="pages/data_processing.html" class="portfolio-item">
                                     <div class="portfolio-card">
                                         <div class="project-icon">
@@ -821,6 +907,24 @@
                                     </div>
                                 </a>
                             </div>
+
+                            <!-- Project 7 -->
+                            <div class="col-md-6 col-lg-4 wow fadeInUp filter-col" data-wow-delay="1.4s" data-project="cybersecurity networks">
+                                <a href="pages/projects/soc_homelab.html" class="portfolio-item">
+                                    <div class="portfolio-card" style="border-color: rgba(63,185,80,0.25); background: linear-gradient(135deg, rgba(13,43,18,0.4) 0%, transparent 60%);">
+                                        <div class="project-icon" style="background: rgba(13,43,18,0.8); color: #3fb950; border-color: rgba(63,185,80,0.3);">
+                                            <i class="fa fa-eye"></i>
+                                        </div>
+                                        <h4 style="color: #3fb950;">SOC Homelab</h4>
+                                        <p class="tech-stack">Splunk • Wazuh • MITRE ATT&amp;CK • Metasploit</p>
+                                        <p class="project-desc">Self-hosted Security Operations Center with attack simulation, SIEM dashboards and incident response</p>
+                                        <div class="learn-more">
+                                            <span>Learn more <i class="fa fa-arrow-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="filter-empty" id="project-empty">No projects match this filter.</div>
                         </div>
                     </div>
                 </div>
@@ -924,6 +1028,37 @@
         <script src="inc/jquery.counterup.min.js"></script>
         <script src="inc/smoothscroll.js"></script>
         <script src="js/theme.js"></script>
+
+        <script>
+        function filterItems(type, filter, btn) {
+            // Update active button
+            var barId = type === 'cert' ? 'cert-filters' : 'project-filters';
+            document.querySelectorAll('#' + barId + ' .filter-btn').forEach(function(b) {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+
+            // Show/hide items
+            var attr = type === 'cert' ? 'data-cert' : 'data-project';
+            var gridId = type === 'cert' ? 'cert-grid' : 'project-grid';
+            var emptyId = type === 'cert' ? 'cert-empty' : 'project-empty';
+            var items = document.querySelectorAll('#' + gridId + ' .filter-col');
+            var visible = 0;
+
+            items.forEach(function(item) {
+                var cats = item.getAttribute(attr) || '';
+                if (filter === 'all' || cats.split(' ').indexOf(filter) !== -1) {
+                    item.classList.remove('hidden');
+                    visible++;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            var empty = document.getElementById(emptyId);
+            if (empty) empty.style.display = visible === 0 ? 'block' : 'none';
+        }
+        </script>
 
     </body>
 
